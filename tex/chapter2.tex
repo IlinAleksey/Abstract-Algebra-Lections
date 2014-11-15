@@ -1,0 +1,99 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Изоморфизм}
+\begin{dfn}
+\textbf{Изоморфизм} - Пусть $\Sigma$ - сигнатура, $\mathbf{A}=(A,I)$, $\mathbf{B}=(B,J)$ - \\
+ универсальные алгебры сигнатуры $\Sigma$, тогда изоморфизм между $\mathbf{A}$ и $\mathbf{B}$ - это $h:\mathbf{A}\rightarrow \mathbf{B}$ - биективная функция, которая удовлетворяет следующему условию:
+$$h(I(f_i)(a_1,...,a_n))=J(f_i)(h(a_1),...,h(a_n))$$
+для любых $a_1,...,a_n$ и $f_i\in \Sigma$
+\end{dfn}
+
+\begin{exm}
+Пример изоморфизма: пусть $\Sigma=(f^{(2)})$, $\mathbf{A}=(\mathbb{R},+)$, $\mathbf{B}=(\mathbb{R},\cdot)$
+
+Надо доказать: 
+$$h(a_1+a_2)=h(a_1)\cdot h(a_2)$$
+$a_1,a_2\in \mathbb{R}$
+
+Пусть $h(x)=e^x$, тогда
+$$h(a_1+a_2)=e^{a_1+a_2}=e^{a_1}\cdot e^{a_2}=h(a_1)\cdot h(a_2)\blacksquare$$
+\end{exm}
+
+\begin{thm}\label{isomorphism-inverse}
+$h$ - изоморфизм между $A$ и $B$, то $h^{-1}$ - изоморфизм между $B$ и $A$
+\begin{proof} пусть $b_1,...,b_{n_i}\in B$, тогда надо доказать
+$$h^{-1}(J(f_i)(b_1,...,b_{n_i}))=I(f_i)(h^{-1}(b_1),...,h^{-1}(b_{n_i}))$$
+Так как $b_1=h(a_1),...,b_{n_i}=h(a_{n_i})$,
+$$I(f_i)(h^{-1}(b_1),...,h^{-1}(b_{n_i}))=I(f_i)(h^{-1}(h(a_1)),...,h^{-1}(h(a_{n_i})))=I(f_i)(a_1,...,a_{n_i})$$
+По определению изоморфизма
+$$h^{-1}(J(f_i)(b_1,...,b_{n_i}))=h^{-1}(h(I(f_i)(a_1,...,a_{n_1})))=I(f_i)(a_1,...,a_{n_1})$$
+Из этих двух равенств следует то, что надо доказать
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Системы, между которыми существует изоморфизм называют \textbf{изоморфными}
+$$\mathbf{A}\simeq\mathbf{B}$$
+операции в изоморфных системах обладают одними и теми же свойствами
+\end{dfn}
+
+\begin{dfn}
+$t(x_1,...,x_n)$ - терм $t$ не содержит других переменных кроме $x_1,...,x_n$
+\end{dfn}
+\begin{dfn}
+Пусть $\mathbf{A}$ - алгебра, $a_1,...,a_n$ - элементы алгебры $\mathbf{A}$, тогда
+$$t(a_1,...,a_n)=\sigma(t), \sigma(x_1)=a_1,...,\sigma(x_n)=a_n$$
+\end{dfn}
+\begin{thm}
+$h$ - изоморфизм между $\mathbf{A}=(A,I)$ и $\mathbf{B}=(B,J)$, то для любого терма $t(x_1,...,x_n)$ и любых $a_1,...,a_n$ выполняется
+$$h(t^{\mathbf{A}}(a_1,...,a_n))=t^{\mathbf{B}}(h(a_1),...,h(a_n))$$
+\end{thm}
+\begin{proof}
+Индукция по построению терма $t$
+\begin{enumerate}
+\item $t=x$
+$$t^{\mathbf{A}}(a)=a\Leftrightarrow h(t^{\mathbf{A}}(a))=h(a)\Leftrightarrow t^{\mathbf{B}}(h(a))=h(a)$$
+\item $t=c$
+$$\sigma(c)=I(c)=J(c)\Rightarrow t^{\mathbf{A}}=I(c), t^{\mathbf{B}}=J(c)\Rightarrow h(I(c))=J(c)$$
+по определению гомоморфизма
+\item $t=f(t_1,...,t_k)$
+\begin{multline*}
+h(t^{\mathbf{A}}(a_1,...,a_n))=\\
+h(I(f)(t^{\mathbf{A}}_{1}(a_1,...,a_n),...,t^{\mathbf{A}}_{k}(a_1,...,a_n)))=\\
+J(f)(h(t^{\mathbf{A}}_{1}(a_1,...,a_n)),...,h(t^{\mathbf{A}}_{k}(a_1,...,a_n)))=\\
+J(f)(t^{\mathbf{B}}_{1}(h(a_1),...,h(a_n)),...,t^{\mathbf{B}}_{k}(h(a_1),...,h(a_n))=\\
+t^{\mathbf{B}}(h(a_1),...,h(a_n))
+\end{multline*}
+\end{enumerate}
+\end{proof}
+\begin{exm}
+Доказать что $\mathcal{A}=(\mathbb{R};\cdot)\not\cong\mathcal{B}=(\mathbb{R}^{+};\cdot)$
+\begin{proof}
+Предположим что существует изоморфизм $h:\mathcal{A}\rightarrow \mathcal{B}$, тогда
+
+$h(0)=x, x\in \mathbb{R}^{+}$
+$$x=h(0)=h(0\cdot 0)=h(0)\cdot h(0)=x^2$$
+$$x=x^2\Rightarrow x=1$$
+
+$h(1)=y, y\in \mathbb{R}^{+} $
+$$y=h(1)=h(1\cdot 1)=h(1)\cdot h(1)=y^2$$
+$$y=y^2\Rightarrow y=1$$
+
+$h(0)=1=h(1)$ - противоречие ($h$ не биективна). Утверждение не верно.
+\end{proof}
+\end{exm}
+\begin{exm}
+Доказать что $\mathcal{A}=(\mathbb{R};+)\not\cong\mathcal{B}=(\mathbb{R};\cdot)$
+\begin{proof}
+Предположим что существует изоморфизм $h:\mathcal{B}\rightarrow \mathcal{A}$, тогда
+
+$h(0)=x, h(1)=y; x,y\in \mathbb{R}$
+\end{proof}
+\end{exm}
+
+
+%% my chapter 1 content
+%%
+%% more of my chapter 1 content
+\end{document}

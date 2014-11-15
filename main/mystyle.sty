@@ -1,26 +1,26 @@
-\ProvidesPackage{mystyle}
 \usepackage{subfiles}
 \usepackage[T1]{fontenc}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[russian,english]{babel}
+\usepackage[english, russian]{babel}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amsthm}
-\hyphenation{изо-морф-ны-ми}
-\emergencystretch = 3em
+\newtheorem*{cnsq}{Следствие}
+\usepackage{euscript}
+\hyphenation{изо-морф-ны-ми един-ствен-ный}
+\emergencystretch = 2em
 \newtheoremstyle{my_general}{12pt}{12pt}{}%
 {}{\sffamily}{:}{\newline}{}
-\newtheoremstyle{my_definition}{12pt}{12pt}{}%
-{}{\sffamily}{:}{\newline}{}
-\newtheoremstyle{my_example}{12pt}{12pt}{\itshape}%
-{}{\sffamily}{:}{\newline}{}
+
 
 \newtheorem{thm}{Теорема}[section]
+
 \theoremstyle{my_general}
 \newtheorem{dfn}{Определение}[section]
 \theoremstyle{my_general}
 \newtheorem{sltn}{Решение}[section]
 \theoremstyle{my_general}
 \newtheorem{exm}{Пример}[section]
+

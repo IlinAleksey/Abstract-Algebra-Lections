@@ -1,0 +1,118 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Подгруппы и моноиды}
+\begin{dfn}
+Подгруппа - многообразие заданное множеством
+$$(x*y)*z=x*(y*z)$$
+\end{dfn}
+\begin{thm}
+Значение терма не зависит от расстановки скобок (Ассоциативный закон)
+$$t=t_1*t_2=(a_{1}a_{2}...a_{m})(a_{m+1}...a_n)=a_{1}a_{2}...a_{n}$$
+\begin{proof}
+Индукция по длине $t$
+
+Базис: $n=1$, нет скобок
+
+Шаг: для $n-1$ верно, тогда
+\begin{enumerate}
+\item $m=n-1$
+$$t=t_1*a_n=(a_{1}a_{2}...a_{m})*a_n=a_{1}a_{2}...a_{n}$$
+\item $1\leq m\leq n-1$
+\begin{multline*}
+t=t_1*t_2=(a_{1}a_{2}...a_{m})(a_{m+1}...a_n)=(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})a_n=\\
+(a_{1}a_{2}...a_{n-1})a_n=a_{1}a_{2}...a_{n}
+\end{multline*}
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{dfn}
+$e_l$ называется \textbf{нейтральным слева} в подгруппе, если $e_l*a=a$ для всех $a$,
+$e_r$ называется \textbf{нейтральным справа} в подгруппе, если $a*e_r=a$ для всех $a$,
+$e$ - нейтральный слева и справа
+\end{dfn}
+\begin{exm}
+Примеры нейтрального элемента:
+\end{exm}
+\begin{thm}
+Если существуют нейтральный слева и нейтральный справа то они равны
+\begin{proof}
+$$e_l=e_l*e_r=e_r$$
+\end{proof}
+\end{thm}
+\begin{cnsq}
+Если нейтральный элемент существует, то он единственный.
+\end{cnsq}
+\begin{dfn}
+Моноид - подгруппа с нейтральным элементом
+\end{dfn}
+\begin{exm}
+Примеры моноидов:
+\end{exm}
+\begin{dfn}
+Свободный моноид - моноид, элементами которого являются конечные последовательности (строки) элементов носителя моноида. Свободный моноид на множестве $A\neq \emptyset$ это $\mathcal{A}=(A^*;\&)$
+\end{dfn}
+\begin{thm}
+Любой моноид, порождённый элементами множества, на котором есть свободный моноид, является гомоморфным образом этого моноида
+\begin{proof}
+Пусть $A\neq \emptyset$, $\mathcal{A}=(A^*;\&)$,\\ $\mathcal{B}=(\left\{t^{\mathcal{B}}(a_1,...,a_n): a_1,...,a_n\in A\right\};*)$ и $h:\mathcal{A}\rightarrow \mathcal{B}$ - Гомоморфизм
+$$h(a_1...a_n)=(a_1,...,a_n)^{\mathcal{B}}$$
+$$h(\varepsilon)=e^{\mathcal{B}}$$
+Надо доказать свойство гомоморфизма:
+$$h(u\&v)=h(u)*h(v)$$
+Пусть $u=a_1...a_n$, $v={a'}_1...{a'}_n$, тогда
+$$h(u\&v)=h(uv)=h(a_1...a_n{a'}_1...{a'}_n)=(a_1...a_n{a'}_1...{a'}_n)^{\mathcal{B}}$$
+\begin{multline*}
+h(u)*h(v)=h(a_1...a_n)*h({a'}_1...{a'}_n)=\\
+(a_1...a_n)^{\mathcal{B}}*({a'}_1...{a'}_n)^{\mathcal{B}}=(a_1...a_n{a'}_1...{a'}_n)^{\mathcal{B}}
+\end{multline*}
+Из этого следует что $h(u\&v)=h(u)*h(v)$
+\end{proof}
+\end{thm}
+\begin{exm}
+Примеры свободных моноидов и их гомоморфных образов:
+\end{exm}
+
+\begin{dfn}
+
+Циклический моноид - моноид порождённый одним элементом. $<a>$ - циклический моноид, порождённый элементом $a$.
+
+$e,a,a^1,a^2,a^3,...$ - элементы моноида $<a>$
+
+\begin{enumerate}
+\item $a^i\neq a^j$ при $i\neq j$
+
+$h:<a>\rightarrow ({\left\{a\right\}}^*;\&)$, $h(a^i)=i$ - изоморфизм.
+\item $a^i=a^j$ при $i\neq j$
+$$k=i+(k-i)=i+y(j-i)+r$$
+$$r=(k-i)mod(j-i)$$
+$$r<j-i$$
+тогда
+\begin{multline*}
+a^k=a^i\underbrace{a^{j-i}...a^{j-i}}_{y}a^r=\\
+(a^ia^{j-i})\underbrace{a^{j-i}...a^{j-i}}_{y-1}a^r\stackrel{(a^ia^{j-i}=a^{i+j-i}=a^j=a^i)}{=}a^i\underbrace{a^{j-i}...a^{j-i}}_{y-1}a^r=\\
+a^ia^r=a^{i+r} (r<j-i; i+r<j)
+\end{multline*}
+\end{enumerate}
+\end{dfn} %% к чему весь этот список?
+
+\begin{exm}\label{cyclical-exm}
+Пример циклическокококого моноида:
+$<a>=(\{e,a,...\};*)$
+
+Таблица умножения $(*)$ -
+\begin{table}[h]
+\centering
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{|l|l|l|l|}
+\hline
+  & $e$ & $a$ & $a^2$ \\ \hline
+$e$ & $a$ & $a$ & $a^2$ \\ \hline
+$a$ & $a$ & $a^2$ & $a$ \\ \hline
+$a^2$ & $a^2$ & $a$ & $a^2$ \\
+\hline
+\end{tabular}
+\end{table}
+\end{exm}
+
+\end{document}
