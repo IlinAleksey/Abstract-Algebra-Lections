@@ -1,22 +1,24 @@
 \usepackage{subfiles}
-\usepackage[T1]{fontenc}
+\usepackage{mathtext}
 \usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8x]{inputenc}
 \usepackage[english, russian]{babel}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amsthm}
+
+
+\usepackage{amsmath,amssymb,amsthm,amscd,amsfonts,mathrsfs}
+
+\usepackage{caption}
+\usepackage{float}
+
+\usepackage{tikz}
+
+\usepackage{braids}
 \newtheorem*{cnsq}{Следствие}
 \usepackage{euscript}
-\hyphenation{изо-морф-ны-ми един-ствен-ный}
 \emergencystretch = 2em
 \newtheoremstyle{my_general}{12pt}{12pt}{}%
 {}{\sffamily}{:}{\newline}{}
-
-
 \newtheorem{thm}{Теорема}[section]
-
 \theoremstyle{my_general}
 \newtheorem{dfn}{Определение}[section]
 \theoremstyle{my_general}
@@ -24,3 +26,29 @@
 \theoremstyle{my_general}
 \newtheorem{exm}{Пример}[section]
 
+\newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\def\dotminus{\mathbin{\ooalign{\hss\raise1ex\hbox{.}\hss\cr
+  \mathsurround=0pt$-$}}}
+\DeclareMathOperator{\ind}{ind}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Ker}{Ker}
+\DeclareMathOperator{\stab}{stab}
+
+\newenvironment{rcases}
+  {\left.\begin{aligned}}
+  {\end{aligned}\right\rbrace}
+  
+%left bracket%
+\makeatletter
+\newenvironment{sqcases}{%
+  \matrix@check\sqcases\env@sqcases
+}{%
+  \endarray\right.%
+}
+\def\env@sqcases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrack
+  \def\arraystretch{1.2}%
+  \array{@{}l@{\quad}l@{}}%
+}
+\makeatother

@@ -1,0 +1,226 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Группы}
+\begin{dfn}
+Группа - моноид, в котором все элементы обратимы
+\end{dfn}
+\begin{dfn}
+Тривиальная группа - группа, состоящая из одного элемента
+\end{dfn}
+\begin{thm}
+Если $M$ - моноид и $G\subseteq M$ - подмножество обратимых элементов, то $G$ - группа
+\begin{proof}
+
+$G\subseteq M$ следовательно $G$ ассоциативна, 
+$e$ - обратимый следовательно $G$ имеет нейтральный элемент. 
+Надо доказать замкнутость: $x*y\in G$
+
+$x',y'$ - обратные к $x$ и $y$ элементы, тогда
+$$(x*y)*(y'*x')=x*(y*y')*x'=x*e*x'=x*x'=e$$
+$$(y'*x')*(x'*y')=y'*(x'*x)*y=y*e*y'=y*y'=e$$
+$x*y$ обратим $\Rightarrow xy\in G$
+
+если $x\in G$, то $x'*x=x*x'=e$, тогда $x'$  имеет обратный элемент, тогда $x'\in G$. Любой элемент $G$ имеет обратный.
+
+$G$ - группа. Теорема доказана.
+
+\end{proof}
+\end{thm}
+\begin{thm}[Теорема Гротендика]
+Каждый коммутативный моноид, в котором все элементы сократимы можно вложить в группу
+\begin{proof}
+Пусть $M$ - коммутативный моноид, $G'=M\times M=(a,b)$, где $a,b\in M$, $(a_1,b_1)(a_2,b_2)=(a_1a_2,b_1b_2)$, $(e_1,e_2)$ - нейтральный элемент.
+
+Пусть $(a,b)\equiv (c,d)\Leftrightarrow ad=bc$. Является ли $\equiv$ конгруэнтностью?
+
+\begin{enumerate}
+\item $(a,b)\equiv(a,b)$, $ab=ba$
+\item $(a,b)\equiv(c,d)$, $ad=bc\Rightarrow cb=da\Rightarrow (c,d)\equiv (a,b)$ 
+\item $(a,b)\equiv(c,d)\equiv(u,v)\Rightarrow(a,b)\equiv(u,v)$
+\end{enumerate}
+
+Надо доказать:
+$$(a_1,b_1)\equiv(a_2,b_2), (c_1,d_1)\equiv(c_2,d_2)\Rightarrow(a_1c_1,b_1d_1)\equiv(a_2c_2,b_2d_2)$$
+
+\begin{multline*}
+(a_1,b_1)\equiv(a_2,b_2), (c_1,d_1)\equiv(c_2,d_2)\Rightarrow \\ 
+a_1b_2=b_1a_2, c_1d_2=d_1c_2\Rightarrow a_1b_2c_1d_2=b_1a_2d_1c_2\Rightarrow \\
+ (a_1c_1)(b_2d_2)=(b_1d_1)(a_2c_2)\Rightarrow \\
+ (a_1c_1,b_1d_1)\equiv(a_2c_2,b_2d_2)
+\end{multline*}
+
+$(a,b)\equiv (c,d)\Leftrightarrow ad=bc$ - конгруэнтность
+\vspace{1em}
+
+Пусть $G = \bigslant{G'}{\equiv}$ надо доказать что $G$ - группа и $M$ вкладывается в $G$
+
+$$ab=ba\Rightarrow abe=ab=ba=bae\Rightarrow (ab,ba)\equiv(e,e)$$
+$$\widehat{(a,b)}*\widehat{(b,a)}=\widehat{(ab,ba)}=\widehat{(e,e)}$$
+$\Rightarrow$ каждый элемент $G$ имеет обратный $\Rightarrow$ $G$ - группа
+
+Пусть $h:M\rightarrow G$ и $h(a)=\widehat{(a,e)}$, тогда
+$$h(ab)=\widehat{(ab,e)}=\widehat{(a,e)}\widehat{(b,e)}=h(a)h(b)$$
+$$h(e)=\widehat{(e,e)}$$
+$h$ - гомоморфизм
+
+Пусть $h(a)=h(b)$
+$$\widehat{(a,e)}=\widehat{(b,e)}\Rightarrow (a,e)\equiv(b,e)\Rightarrow ae=eb \Rightarrow a=b$$
+следовательно $h$ - инъекция, следовательно $h$ - вложение
+
+\end{proof}
+\end{thm}
+\begin{exm}
+Пример на теорему Гротендика:
+\end{exm}
+\begin{thm}\label{group-qualities}
+$G$ - группа тогда и только тогда, когда
+\begin{enumerate}
+\item $(xy)z=x(yz)$
+\item $xe=x$
+\item $xx^{-1}=e$
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+\item $\Rightarrow$ по определению группы
+\item $\Leftarrow$
+
+$(xy)z=x(yz)\Rightarrow$ $G$ ассоциативна
+
+$xx^{-1}=e\Rightarrow x^{-1}x=e$
+
+Надо доказать: $ex=x$ для любого $x$
+\begin{multline}
+x^{-1}x=x^{-1}xe=x^{-1}x(x^{-1}x)(x^{-1}x)^{-1}=x^{-1}(xx^{-1})x(x^{-1}x)^{-1}=\\
+x^{-1}ex(x^{-1}x)^{-1}=(x^{-1}x)(x^{-1}x)^{-1}=e
+\end{multline}
+$$ex=(xx^{-1})x=x(x^{-1}x)=xe=x$$
+$G$ - группа
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{cnsq}
+Группы образуют многообразие в сигнатуре $(*,e,{ }^{-1})$
+\end{cnsq}
+\begin{dfn}
+Аддитивная группа - группа со сложением
+\end{dfn}
+\begin{exm}
+Примеры аддитивных групп:
+$(\mathbb{Z};+)$
+\end{exm}
+\begin{dfn}
+Мультипликативная группа - группа с умножением
+\end{dfn}
+\begin{exm}
+Примеры мультипликативных групп:
+$(\mathbb{Q};\cdot)$
+\end{exm}
+\begin{dfn}
+Множество вычетов - 
+\end{dfn}
+\begin{exm}
+\end{exm}
+\begin{dfn}
+Матричные группы: носитель группы - $M^*_n(R)$ и $det\neq 0$
+\end{dfn}
+\begin{exm}
+Примеры матричных групп:
+\begin{enumerate}
+\item $(M^*_n,\cdot,E,{ }^{-1})$ - группа, не коммутативная
+\item $det=\pm 1$ - группа
+\item $O_n$ - ортогональные, $(O_n,\cdot,E,{ }^{-1})$ - группа
+\end{enumerate}
+\end{exm}
+\begin{dfn}
+Группа перестановок - группа перестановок множества $S$ называется группа всех биекций $f:S\rightarrow S$. $(F,\circ,e,{ }^{-1})$
+\end{dfn}
+\begin{exm}
+\end{exm}
+\begin{dfn}
+Симметрическая группа порядка $n$: $S$ - конечно и состоит из $n$ элементов. $(A,\circ,e,{ }^{-1})$, $A$ - множество автоморфизмов $h:S\rightarrow S$
+\end{dfn}
+\begin{exm} \label{TriangleGroup}
+Пример симметрической группы:
+
+\begin{tikzpicture}
+\draw (0,0) -- (2,3.46410161514) -- (4,0)-- (0,0);
+\draw	(0,0) node[anchor=north east] {2}
+		(2,3.46410161514) node[anchor=south] {1}
+		(4,0) node[anchor=north west] {3};
+\end{tikzpicture}
+
+$A=\{e,r_1,r_2,s_1,s_2,s_3\}$
+\begin{itemize}
+
+  \item $e$ - тождественное преобразование
+  \item $r_1, r_2$ - поворот на $120^{\circ}$ и $240^{\circ}$ соответственно
+  \item $s_1, s_2, s_3$ - оборот вокруг высоты, идущей из первой, второй и третьей вершины соответственно
+\end{itemize}
+
+$$\mathbf{D}_3=(A,\circ)$$
+
+\begin{table}[H]
+\centering
+\caption*{Таблица умножения $\circ$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c|c|c}
+  & $e$ & $r_1$ & $r_2$ & $s_1$& $s_2$ & $s_3$  \\ \hline
+$e$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$r_1$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$r_2$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_1$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_2$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_3$ & $x$ & $x$& $e$ & $x$& $e$ & $x$ \\ 
+\end{tabular}
+\end{table}
+\end{exm}
+
+\begin{dfn}
+Группа кос - 
+
+\begin{tikzpicture}
+\braid a_2 a_1;
+\end{tikzpicture}
+
+ещё:
+
+\begin{tikzpicture}
+\braid[number of strands=3];
+\end{tikzpicture}
+
+потом соображу как длиннее сделать
+\end{dfn}
+\begin{thm}
+Если $G$ - полугруппа, то $G$ является группой тогда и только тогда, когда любое уравнение вида $ax=b$ или $xa=b$, $(a,b\in G)$ имеет в $G$ решение
+\begin{proof}
+\begin{enumerate}
+\item $\Rightarrow$
+\begin{align*}
+ax&=b & xa&=b \\
+a^{-1}ax&=a^{-1}b & xaa^{-1}&=ba^{-1} \\
+x&=a^{-1}b & x&=ba^{-1}
+\end{align*}
+любое уравнение вида $ax=b$ или $xa=b$, $(a,b\in G)$ имеет в $G$ решение
+\item $\Leftarrow$ по теореме \ref{group-qualities}
+\begin{enumerate}
+\item по определению полугруппы
+\item $ax=a\Rightarrow x=e$
+$ya=b$, имеет решение $y=d$, $da=b$
+$$be=dae=da=b\Rightarrow be=b$$
+\item для любых $ax=e$ существует решение $x=a^{-1}$ - обратное к $a$
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{thm}
+\begin{enumerate}
+\item $(ab)^{-1}=b^{-1}a^{-1}$
+\item $(a^{-1})^{-1}=a$
+\end{enumerate}
+\end{thm}
+\begin{dfn}
+Абелева группа - группа, в которой $xy=yx$
+\end{dfn}
+
+\end{document}

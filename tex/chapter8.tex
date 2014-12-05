@@ -1,0 +1,413 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Гомоморфизмы группы}
+\begin{thm}
+Если $G$ и $H$ - группа, $h:G\rightarrow H$ и $h(a*b)=h(a)*h(b)$, то $h$ - гомоморфизм
+\begin{proof}
+$h(e)=h(e*e)=h(e)*h(e)$
+
+$h(e)$ - идемпотент в $\mathcal{H}$, следовательно $h(e)=e$
+\begin{multline*}
+h(a^{-1})=h(a^{-1})*e=h(a^{-1})*h(a)*(h(a))^{-1}=\\
+h(a^{-1}*a)*(h(a))^{-1}=h(e)*(h(a))^{-1}=e*(h(a))^{-1}=(h(a))^{-1}
+\end{multline*}
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Конгруэнтность порождённая $h$ - если $a\equiv b \Leftrightarrow h(a)=h(b)$ - конгруэнтность, то $h[A]= \bigslant{A}{\equiv}$ 
+\end{dfn}
+
+\begin{thm}
+Если $h:G\rightarrow H$ - гомоморфизм, $\equiv$ - конгруэнтность порождённая $h$, то классы эквивалентные $e$ в $G$ являются нормальными подгруппами
+\begin{proof}
+Пусть $a,b\in f\Rightarrow ab^{-1}\in f$, $a\equiv e$, $b\equiv e$, $b^{-1}\equiv e^{-1}\equiv e$, $ab^{-1}\equiv ee\equiv e$
+
+$$a\{b\in \mathcal{G}:b\equiv e\}\ni c$$
+$$aba^{-1}\in\{b\in \mathcal{G}:b\equiv e\}a\ni c$$
+
+$$c=ab=abe=aba^{-1}a$$
+$$b\equiv e \quad a\equiv a\quad a^{-1}\equiv a^{-1}$$
+$$aba^{-1}\equiv aea^{-1}=e$$
+$$aba^{-1}\equiv e$$
+$$aba^{-1}a=abe=ab=c$$
+\end{proof}
+"И в обратную сторону". Хотя я в душе не знаю как в эту получилось.
+\end{thm}
+
+\begin{dfn}
+Ядро подгруппы - множество элементов эквивалентных $e$. $\operatorname{Ker}h$
+\end{dfn}
+
+\begin{thm}
+$G$ - группа, $H$ - нормальная подгруппа, $a\equiv b \Leftrightarrow$ $a$ и $b$ принадлежат одному левому классу, то $\equiv$ - конгруэнтность
+\begin{proof}
+Пусть $a\equiv b$, $c\equiv d$, надо доказать
+\begin{enumerate}
+\item $ac\equiv bd$
+\item $a^{-1}\equiv b^{-1}$ (зачем)
+\end{enumerate}
+\begin{enumerate}
+\item 
+\begin{align*}
+a,b&\in x\mathcal{H} & a&=xh_a,  b=xh_b\\
+c,d&\in y\mathcal{H} & c&=yh_c,  d=yh_d
+\end{align*}
+$ac=xh_a\cdot yh_c$, $h_ay=yh'$, $h_ay\in \mathcal{H}y=y\mathcal{H}$
+$$
+\begin{rcases}
+ac=xh_ayh_c=xy\underbrace{h'h_c}_{\in\mathcal{H}}\in xy\mathcal{H}\\
+bd=xh_byh_d=xy\underbrace{h''h_d}_{\in\mathcal{H}}\in xy\mathcal{H}
+\end{rcases}
+\text{эквивалентные}
+$$
+$h_by=yh''$, $h_by\in \mathcal{H}y=y\mathcal{H}$
+\item
+\begin{align*}
+&h_a & &h_b\\
+&h^{-1}_a & &h^{-1}_b\\
+&\mathcal{H}x^{-1} & &\mathcal{H}x^{-1}
+\end{align*}
+$a^{-1},b^{-1}\in x^{-1}\mathcal{H}$
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+$\mathcal{G}$ - группа, $\mathcal{H}$ - нормальная подгруппа, $\equiv$ - отношение конгруэнтности. Тогда $\bigslant{\mathcal{G}}{\equiv}=\bigslant{\mathcal{G}}{\mathcal{H}}$
+\end{dfn}
+
+\begin{cnsq}
+Если $h:\mathcal{G}\rightarrow \mathcal{H}$ - гомоморфизм, тогда $h[\mathcal{G}]=\bigslant{\mathcal{G}}{\Ker h}$
+\begin{proof}
+$h[\mathcal{G}]=\bigslant{\mathcal{G}}{\equiv}=\bigslant{\mathcal{G}}{\Ker h}$
+\end{proof}
+\end{cnsq}
+
+\begin{cnsq}
+Для всякой нормальной группы верно $aH\cdot bH=abH$
+\begin{proof}
+$aH\cdot bH=aH\cdot Hb=aHb=abH$
+\end{proof}
+\end{cnsq}
+
+\begin{exm}
+$$\mathcal{D}_3=\{e,r_1,r_2,s_1,s_2,s_3\}$$
+$\langle r_1\rangle$ - подгруппа вращений
+
+$\langle r_1\rangle$
+
+$S_1\langle r_1\rangle$
+
+\begin{table}[h]
+\centering
+\caption*{Таблица умножения (ЧЕГО???)}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c}
+  & $\langle r_1\rangle$ & $S_1\langle r_1\rangle$ \\ \hline
+$\langle r_1\rangle$ & $\langle r_1\rangle$ & $S_1\langle r_1\rangle$ \\ \hline
+$S_1\langle r_1\rangle$ & $S_1\langle r_1\rangle$ & $\langle r_1\rangle$  \\ 
+\end{tabular}
+\end{table}
+\end{exm}
+
+\begin{exm}
+$(\mathbb{R},+)\supseteq (\mathbb{Z},+)$
+
+$a+\mathbb{Z}$
+
+$ba\in \mathbb{Z}$
+
+$a+\mathbb{Z}=b+\mathbb{Z}$
+
+$a\in [0,1)$
+
+$(a+\mathbb{Z})+(b+\mathbb{Z})=(a+b)=(a+b)\mod 1$
+
+$\mathbb{C}_1=\{z\in\mathbb{C},\vert z\vert=1\}$, $(\mathbb{C}_1,\cdot)$
+
+$h(x)=e^{2nix}$
+
+$x\in \mathbb{R}=e^{2nix}\in \mathbb{C}_1$
+
+$h(x+y)=e^{2ni(x+y)}=e^{2nix}e^{2niy}=h(x)h(y)$
+
+$h:(\mathbb{R},+)\rightarrow (\mathbb{C},\cdot)$
+
+$r\in \Ker h \Leftrightarrow r\equiv e$
+
+$h(r)=h(e)$
+
+$h(r)=h(0)$
+
+$e^{2nix}=e^{2nix}=1$
+
+$e^{2nix}=2n\cdot k, k\in \mathbb{Z}$
+
+$r\in \mathbb{Z}$
+
+$\Ker h\in \mathbb{Z}$
+\end{exm}
+
+\begin{dfn}
+$\mathcal{G}$ - группа, $A$ - множество, образующее группу, тогда определяющим соотношением называют равенство вида $t(a)=s(a)$, где $t,s$ - термы, $a\in A$
+\end{dfn}
+
+\begin{exm}
+$A=\{a,b\}$, $a^2=b^2$, $a^3b=ba$
+\end{exm}
+
+\begin{dfn}
+$A$ - множество элементов, $X$ - множество определяющих соотношений. Группа, порождённая $A$ и $X$ - $\mathcal{G}$ такач, что
+\begin{enumerate}
+\item образована при помощи $A$
+\item в $\mathcal{G}$ выполняются все определяющие соотношения из $X$
+\item любая группа $\mathcal{H}$, удовлетворяющая условиям 1 и 2 является гомоморфным множеством $\mathcal{G}$
+\end{enumerate}
+\end{dfn}
+
+\begin{exm}
+$$\mathcal{D}_3=\{e,r_1,r_2,s_1,s_2,s_3\}$$
+$A=\{r_1,s_1\}$, $\langle A\rangle=\mathcal{D}_3$
+
+$
+\begin{sqcases}
+r_1^3=e\\
+r_1s_1=s_1r_1^2\\
+s_1^2=e
+\end{sqcases}$
+
+$\mathcal{H}$ порождена $A$
+
+$*$ - одноместная операция
+
+$\mathcal{H}$ ?????? ??? слова, состоящие из $r_1,s_1,r_1^{-1},s_1^{-1}$, пусть в $\mathcal{H}$ выполнены определяющие соотношения $X$
+\begin{align*}
+r_1^3&=e & r_1^{-1}&=r_1^2 & r_1^{-1}&=r_1r_1\\
+s_1^2&=e & s_1^{-1}&=s_1 & s_1^{-1}&=s_1
+\end{align*}
+$s_1...s_1r_1...r_1$
+
+$s_1^nr_1^m$
+
+$s_1^n=s_1^{n\mod 2}$
+
+$r_1^m=r^{m\mod 3}$
+\begin{table}[h]
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{|c c|}
+
+\hline
+ $r_1^0$ & $s_1r_1^0$  \\ 
+$r_1^0$ & $s_1r_1^0$ \\ 
+$r_1^0$ & $s_1r_1^0$  \\ 
+\hline
+\end{tabular}
+\end{table}
+\end{exm}
+
+\begin{thm}
+Для любого множества $A$ и множества определяющих соотношений $X$ существует группа, образованная $A$ и $X$
+\begin{proof}
+Пусть $A'=A\cup\{a{-1}:a\in A^\}$. Нужно проверить три свойства
+\begin{enumerate}
+\item Если $M$ - свободный моноид образованный $A'$($M$ - множество слов алфавита $A'$ с конкатенацией), $M'$ - моноид, порождённый $A'$, то $M'$ - гомоморфный образ $M$. $u,v\in M$, $u\equiv v\Leftrightarrow h(u)=h(v)$ для любого гомоморфизма $h:M\rightarrow \mathcal{G}$. $\mathcal{G}$ - группа, порождённая $A$ в которой ??? $X$.
+
+Надо доказать что $\equiv$ является конгруэнтностью
+\begin{enumerate}
+\item $a\equiv a$
+\item $a\equiv b\Rightarrow b\equiv a$
+\item $a\equiv b, b\equiv c\Rightarrow a\equiv c$
+\end{enumerate}
+Пусть $a\equiv b$, $c\equiv d$, то есть $h(a)=h(b)$, $h(c)=h(d)$, тогда, так как $h$  является гомоморфизмом
+$$h(ac)=h(a)h(c)=h(b)h(d)=h(bd)$$
+следовательно $ac\equiv bd$ и $\equiv$ - конгруэнтность
+
+Пусть группа $F=\bigslant{M}{\equiv}$, $\widehat{a}\in F$, $a=u_1...u_n$, $b=u_n^{-1}...u_1^{-1}$, $a,b\in M$
+
+$h(a)=h(u_1)...h(u_n)$
+
+$h(b)=h(u_n^{-1})...h(u_1^{-1})$
+
+$h(ab)=h(u_1)...h(u_n)h(u_n^{-1})...h(u_1^{-1})=e$
+
+$\widehat{a}\widehat{b}=\widehat{e}$
+
+$F$ порождается $A$
+\item Доказать $t(\overline{a})=s(\overline{a})\in X$
+
+$h(t(a_1,...,a_n))=t(h(a_1),...,h(a_n))=s(h(a_1),...,h(a_n))=h(s(a_1,...,a_n))$
+$t(\overline{a})\equiv s(\overline{a})\Rightarrow \widehat{t(\overline{a})}=widehat{s(\overline{a})}\Rightarrow t(\widehat{a_1},...,\widehat{a_n})=s(\widehat{a_1},...,\widehat{a_n}$
+\item Из чего следует?
+\end{enumerate}
+и WTF в общем
+\end{proof}
+\end{thm}
+
+\begin{exm}
+Про пирамиду рубика. Конём.
+\end{exm}
+
+\begin{exm}
+Дана "головоломка"
+
+\begin{table}[H]
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{|c|c|}
+\hline
+1 & 2\\\hline
+3 & 4\\
+\hline
+\end{tabular}
+\end{table}
+Построить группу $\mathcal{G}$
+
+
+$a$ - перестановка двух столбцов
+
+$b$ - перестановка строк
+
+\begin{table}[H]
+$e$:
+\begin{tabular}{|c|c|}
+\hline
+1 & 2\\\hline
+3 & 4\\
+\hline
+\end{tabular}
+$a$:
+\begin{tabular}{|c|c|}
+\hline
+2 & 3\\\hline
+4 & 1\\
+\hline
+\end{tabular}
+$b$:
+\begin{tabular}{|c|c|}
+\hline
+3 & 4\\\hline
+1 & 2\\
+\hline
+\end{tabular}
+$ab$:
+\begin{tabular}{|c|c|}
+\hline
+4 & 1\\\hline
+2 & 3\\
+\hline
+\end{tabular}
+\end{table}
+
+$a^2=e$, $b^2=e$, $ab=ba$
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c|c|c|c}
+ & $e$& $a$&$b$&$ab$\\\hline
+$e$& $e$& $a$&$b$&$ab$\\\hline 
+$a$& $a$& $e$&$ab$&$b$\\\hline 
+$b$& $b$& $ba$&$e$&$a$\\\hline 
+$ab$& $ab$& $b$&$a$&$e$\\ 
+\end{tabular}
+\end{table}
+
+$\mathcal{G}=(\{e,a,b,ab\},\circ)$
+\end{exm}
+
+\begin{exm}
+Таблица 8x8. Конём.
+\end{exm}
+
+\begin{exm}
+$Z=1,-1$
+\end{exm}
+
+\begin{exm}
+\end{exm}
+
+\begin{exm}
+\end{exm}
+
+\begin{exm}
+\end{exm}
+
+\begin{exm}
+\end{exm}
+
+\begin{dfn}
+Если $X= \emptyset$, то $\bigslant{M}{\equiv}$ - свободная группа порождённая $A$
+\end{dfn}
+
+\begin{cnsq}
+Любая группа порождённая $A$ - гомоморфный образ свободной группы
+\end{cnsq}
+
+\begin{dfn}
+$\mathcal{G}$ - группа, $S\neq \emptyset$. Действие группы $\mathcal{G}$ на $S$ - это отображение $h:S\times \mathcal{G}\rightarrow S$ и
+\begin{enumerate}
+\item $h(S,e)=S$
+\item $h(h(S,a),b)=h(S,ab)$
+\end{enumerate}
+Эти два условия по другому:
+\begin{enumerate}
+\item $Se=S$
+\item $(Sa)b=S(ab)$
+\end{enumerate}
+\end{dfn}
+
+\begin{exm}
+$\mathcal{G}$ действует на себя правыми умножениями
+\end{exm}
+
+\begin{dfn}
+Сопряжение - действие группы $\mathcal{G}$ на себя или множество подмножеств $P(\mathcal{G}):h(S,a)=a^{-1}Sa$
+\end{dfn}
+
+\begin{thm}
+Сопряжение - действие
+\begin{proof}
+Проверим условия сопряжения
+\begin{enumerate}
+\item $e^{-1}Se=eSe=S$
+\item $h(h(S,a)b)=h(a^{-1}Sa,b)=b^{-1}a^{-1}Sab=(ab)^{-1}Sab=h(S,ab)$
+
+$a^{-1}Aa=A\subseteq \mathcal{G}$
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{thm}
+Любая подгруппа при сопряжении переходит в подгруппу
+\begin{proof}
+Пусть $A$ - подгруппа $\mathcal{G}$
+\end{proof}
+\end{thm}
+
+\begin{thm}
+Пусть $A$ - подгруппа, то $A$ неподвижна при всех сопряжениях тогда и только тогда когда $A$ - нормальная подгруппа
+\begin{proof}
+\begin{itemize}
+\item $\Rightarrow$ $a^{-1}Aa=a\Rightarrow aa^{-1}Aa=aA\Rightarrow Aa=aA$
+\item $\Leftarrow$ $Aa=aA\Rightarrow a^{-1}Aa=a^{-1}aA\Rightarrow a^{-1}Aa=A$
+\end{itemize}
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+$\mathcal{G}$ действует на $S$, $s\in S$. Стабилизатор $s$ - $\stab s=\{a\in \mathcal{G},h(s,a)=s\}$
+\end{dfn}
+
+\begin{thm}
+$\stab s$ - подгруппа $\mathcal{G}$
+\begin{proof}
+пусть $b,c \in \stab s$, тогда
+\begin{multline*}
+
+\end{multline*}
+
+\end{proof}
+\end{thm}
+
+
+
+\end{document}

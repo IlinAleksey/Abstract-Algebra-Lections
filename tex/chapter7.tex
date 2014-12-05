@@ -1,0 +1,513 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Подгруппы}
+\begin{dfn}
+Подгруппа - подмножество H группы G, само являющееся группой относительно операции, определяющей G\\
+Подгруппа - подалгебра в группе
+\end{dfn}
+\begin{cnsq}
+Подгруппа является группой
+\end{cnsq}
+\begin{dfn}
+Тривиальная подгруппа - подгруппа, состоящая только из одного нейтрального элемента группы или равна самой группе
+\end{dfn}
+\begin{exm}
+Пример подгрупп
+\end{exm}
+\begin{exm}
+$(\mathbb{Z}_p;+,0,-)$, $p$ - простое число
+
+В этой группе нет нетривиальных подгрупп
+\begin{proof}
+$A\subseteq \mathbb{Z}_p$, $x\in A$, $x$
+$x,2x,3x,...,px$ - все разные
+
+предположим, что $ix=jx (i<j)$, тогда $jx-ix=0\Rightarrow (j-i)x=0$
+
+$(j-i)xmodp=0$
+
+$(j-i)modp=0$
+
+$j-i=0$ ПОЧЕМУ
+
+$j=i$
+
+$A=\mathbb{Z}_p$
+
+\end{proof}
+\end{exm}
+\begin{thm}
+Любая бесконечная группа имеет нетривиальную подгруппу
+\begin{proof}
+Пусть $a\in G$, $a\neq e$, тогда
+
+$A=\{a^0=e, a^1,a^2,...,a^{-1},a^{-2},...\}$
+\begin{enumerate}
+\item $A\neq G$ $A$ - нетривиальная подгруппа
+\item $A=G$ $A'=\{a^0,a^2,a^4,...,a^{-2},a^{-4},...\}$
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{exm}
+Пример подгрупп:
+Возьмём группу из \ref{TriangleGroup} и выпишем подгруппы:
+\begin{enumerate}
+\item $\{e\}$ - тривиальная подгруппа
+\item $\{e,r_1,r_2,s_1,s_2,s_3\}$ - тривиальная подгруппа
+\item $\{e,r_1,r_2\}$
+\item $\{e,s_1\}$, $\{e,s_2\}$, $\{e,s_3\}$
+\end{enumerate}
+\end{exm}
+\begin{exm}
+Группа операций над треугольником - подгруппа
+\end{exm}
+\begin{exm}
+Является ли группой моноид $(\mathcal{A};\cap,e)$, где $\mathcal{A}$ - множество фигур на плоскости, $e$ - вся плоскость.
+\begin{proof}
+$A\cap A^{-1}=e$, этого не может быть, $(\mathcal{A};\cap,e)$ - не группа
+\end{proof}
+Является ли группой алгебра $(\mathcal{A};\dotminus)$, где $\mathcal{A}$ - множество фигур на плоскости.
+\begin{proof}
+Сперва докажим ассоциативность $\dotminus$: $A\dotminus (B\dotminus C)=(A\dotminus B)\dotminus C$
+
+$A\dotminus B=(\overline{A}\cap B)\cup(\overline{B}\cap A)$
+
+\begin{multline*}
+A\dotminus (B\dotminus C)=(\overline{A}\cap (B\dotminus C))\cup(A\cap (\overline{B\dotminus C}))=\\
+(\overline{A}\cap ((\overline{B}\cap C)\cup(\overline{C}\cap B))\cup(A\cap (\overline{(\overline{B}\cap C)\cup(\overline{C}\cap B)}))=\\
+(\overline{A}\cap ((\overline{B}\cap C)\cup(\overline{C}\cap B))\cup(A\cap
+(\overline{(\overline{B}\cap C)}\cap \overline{(\overline{C}\cap B)})=\\
+(\overline{A}\cap ((\overline{B}\cap C)\cup(\overline{C}\cap B))\cup(A\cap
+((B\cup \overline{C})\cap (C\cup \overline{B}))=\\
+(\overline{A}\cap \overline{B}\cap C)\cup (\overline{A}\cap B\cap \overline{C})
+\cup(A\cap
+((B\cup \overline{C})\cap (C\cup \overline{B}))=\\
+(\overline{A}\cap \overline{B}\cap C)\cup (\overline{A}\cap B\cap \overline{C})
+\cup
+(A\cap B\cap \overline{B})\cup (A\cap B\cap C)\cup (A\cap \overline{B}\cap \overline{C})\cup (A\cap \overline{C}\cap C)=\\
+(\overline{A}\cap \overline{B}\cap C)\cup (\overline{A}\cap B\cap \overline{C})
+\cup
+(A\cap B\cap C)\cup (A\cap \overline{B}\cap \overline{C})
+\end{multline*}
+\begin{multline*}
+(A\dotminus B)\dotminus C=C\dotminus (A\dotminus B)=...=\\
+(\overline{C}\cap \overline{B}\cap A)\cup (\overline{C}\cap B\cap \overline{A})
+\cup
+(C\cap B\cap A)\cup (C\cap \overline{B}\cap \overline{A})
+\end{multline*}
+$$A\dotminus (B\dotminus C)=(A\dotminus B)\dotminus C$$
+
+теперь доказать существование обратного
+
+Пусть $e=\emptyset$, Тогда $A\dotminus \emptyset=A$
+
+$A\dotminus A^{-1}=\emptyset\Rightarrow (\overline{A}\cap A^{-1})\cup (\overline{A^{-1}}\cap A)=\emptyset\Rightarrow A^{-1}=A$
+
+$(\mathcal{A};\dotminus)$ - группа
+\end{proof}
+\end{exm}
+\begin{exm}
+Конечные группы
+\begin{enumerate}
+\item $\mathcal{G}_1=(\{e\};*)$
+\begin{table}[h]
+\centering
+\caption*{Таблица умножения $*$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c}
+  & $e$  \\ \hline
+$e$ & $e$ \\
+
+\end{tabular}
+\end{table}
+\item $\mathcal{G}_2=(\{e,a\};*)$
+\begin{table}[H]
+\centering
+\caption*{Таблица умножения $*$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c}
+  & $e$ & $a$   \\ \hline
+$e$ & $e$ & $a$  \\ \hline
+$a$ & $a$ & $e$ \\
+\end{tabular}
+\end{table}
+\item $\mathcal{G}_3=(\{e,a,b\};*)$
+\begin{table}[H]
+\centering
+\caption*{Таблица умножения $*$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c}
+  & $e$ & $a$  &$b$  \\ \hline
+$e$ & $e$ & $a$ &$b$ \\ \hline
+$a$ & $a$ & $b$ &$e$ \\ \hline
+$b$ & $b$ & $e$ & $a$\\
+\end{tabular}
+\end{table}
+\item $\mathcal{A}=(\{e,a,b,c\},*)$
+\begin{table}[h]
+\centering
+\caption*{Таблица умножения $*$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c}
+  & $e$ & $a$ & $b$ & $c$ \\ \hline
+$e$ & $e$ & $a$ & $b$ & $c$ \\ \hline
+$a$ & $a$ & $e$ & $b$ & $c$ \\ \hline
+$b$ & $b$ & $c$ & $e$ & $a$ \\ \hline
+$c$ & $c$ & $b$& $a$ & $e$ \\ 
+\end{tabular}
+\end{table}
+\end{enumerate}
+\end{exm}
+
+\begin{exm}
+Построить группу симметрии правильного n-угольника (Диэдрическая группа)
+
+$\mathcal{D}_n=({r_0,...,r_{n-1},s_1,...,s_n};\circ,e,{ }^{-1})$, где $r_0,...,r_{n-1}$ - повороты, $s_1,...,s_n$ - отражения, эти элементы множсетва являются автоморфизмами, композиция задана следующей таблицей умножения:
+\begin{table}[H]
+\centering
+\caption*{Таблица умножения $\circ$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c}
+  & $r_i$ & $s_i$   \\ \hline
+$r_j$ & $r_{(i+j)\mathrm{mod}n}$ & $s_{(i+j)\mathrm{mod}n}$  \\ \hline
+$s_j$ & $s_{(j-i)\mathrm{mod}n}$ & $r_{(i-j)\mathrm{mod}n}$ \\
+\end{tabular}
+\end{table}
+нейтральным элементом является $r_0$, обратным к любому отражению $s_i$ само отражение $s_i$, обратным к повороту $r_i$ поворот $r_{n-i}$
+\end{exm}
+\begin{dfn}
+Рекурсивная перестановка - разнозначная общерекурсивная функция, область значений которой - множество $\omega$ 
+\end{dfn}
+\begin{thm}
+Рекурсивные перестановки с операцией композиции образуют группу
+\begin{proof}
+Надо доказать ассоциативность $\circ$, существование нейтрального и обратных
+\begin{enumerate}
+\item $a\in \omega$, $a=g(b)$, $b=f(c)$, $a=g(f(c))=(f\circ g)(c)$, $\circ$ ассоциативна
+\item $e=\mathrm{Id}^1_1$, $(f\circ e)(a)=e(f(a))=f(a)$
+\item $f^{-1}=$
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{thm}
+Любая группа вкладывается в группу перестановок
+\begin{proof}
+Пусть $\mathcal{G}=(G,*)$, $S$ - множество перестановок $G$, надо доказать
+$$h(x*y)=h(x)\circ h(y)$$
+Пусть $h(x)=f_x$, такой что $f_x(y)=y*x$ (А существует ли $f_x$ для каждого $x$?). $h$ разнозначна, так как $f_x(e)=f_y(e)\Rightarrow ex=ey\Rightarrow x=y$,
+\begin{multline*}
+h(x*y)(a)=f_{x*y}(a)=a*(x*y)=(a*x)*y=f_x(a)*y=f_y(f_x(a))=\\
+(f_x\circ f_y)(a)=(h(x)\circ h(y))(a)
+\end{multline*}
+\end{proof}
+\end{thm}
+\begin{thm}
+Любой конечный моноид, в котором нет неединичных идемпотентов является группой
+\begin{proof}
+Пусть $M$ - конечный моноид, $a\in M$, $a*a^-1=e$
+
+Индукция по количеству элементов
+
+Базис: $n=1$, $a=e$, $M=\{e\}$
+
+Шаг индукции: пусть для моноидов с $k<n$ верно. Тогда для $k=n$
+
+Пусть $a\in M$, $A$ - циклический моноид, порождённый $a$
+\begin{enumerate}
+\item $A\neq M$, $|A|<n$, по индукционному предположению
+\item $A=M$, так как $M$ не содержит неединичных идемпотентов, то $A$ - это моноид типа $(0,n)$ 
+
+$$a^xa^y=\begin{cases} a^{x+y} &,\mbox{если } x+y<n, y<n-1\\
+a^{j+(x+y-i)}&,\mbox{если } x+y\geq n\end{cases}$$
+следовательно $a^xa^y=a^{(x+y)\mathrm{mod}n}$ и $a^{-1}=a^{n-1}$
+
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{exm}
+Построить группу симметричную чему-то там
+\end{exm}
+
+\begin{thm}
+Любая чётная перестановка является произведением циклов длины 3
+\begin{proof}
+Любую чётную перестановку  можно разложить в произведение циклов длины 2. Таких циклов будет чётное число, соответственно будет $n$ произведений циклов вида $(ab)(cd)$
+\begin{enumerate}
+\item $b=c$, тогда $(ab)(cd)=(abd)$
+\item $b\neq c$, тогда $(ab)(cd)=(ab)(bc)(bc)(cd)=(abc)(bcd)$
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{thm}
+Если $\mathcal{G}$ - группа, $\mathcal{H}\subseteq \mathcal{G}$, $\mathcal{H}\neq \emptyset$, $a,b\in \mathcal{H}\rightarrow ab^{-1}\in \mathcal{H}$, тогда $\mathcal{H}$ является подгруппой
+\begin{proof}
+Пусть $a,b\in H$
+\begin{enumerate}
+\item $H\neq \emptyset$, $a\in H\Rightarrow aa^{-1}\in H\Rightarrow e\in H$ есть нейтральный элемент
+\item $a\in H\Rightarrow ea^{-1}\in H\Rightarrow a^{-1}\in H$, есть обратные
+\item $a,b\in H$, $b^{-1}\in H\Rightarrow a(b^{-1})^{-1}\in H\Rightarrow ab\in H$, замкнуто по операции группы $\mathcal{G}$
+
+$\mathcal{H}$ - подгруппа 
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Центр группы - $\mathcal{Z}=\{a\in G, ab=ba \text{ для всех } b\in G\}$
+\end{dfn}
+\begin{exm}
+$\mathcal{M}=(M^*_2(\mathbb{R});\cdot)$, невырожденные матрицы
+
+$\mathcal{Z}= \left\{
+\begin{pmatrix}a&0\\0&a\end{pmatrix}:a\in R
+\right\}$
+\end{exm}
+\begin{thm}
+Центр группы - подгруппа
+\begin{proof}
+$a,b\in \mathcal{Z}$, $ab^{-1}\in \mathcal{Z}$
+
+Надо доказать: $x\in \mathcal{G}$, $(ab^{-1})x=x(ab^{-1})$
+\begin{multline*}
+(ab^{-1})x=ab^{-1}xe=ab^{-1}xbb^{-1}=ab^{-1}bxb^{-1}=axb^{-1}=x(ab)^{-1}
+\end{multline*}
+следует что $x\in \mathcal{Z}$ (что это вообще доказывает)
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Циклическая группа - группа, порождённая одним элементом. $<a>$ - циклическая группа порождённая $a$.
+
+$(\omega,+,0)$ изоморфно бесконечной циклической группе
+
+моноид типа $(i,j)$ изоморфен конечной циклической группе
+\end{dfn}
+
+\begin{thm}
+$\mathcal{G}=\langle a\rangle$, тогда $\mathcal{G}\cong (\mathbb{Z},+)$ или  $\mathcal{G}\cong (\mathbb{Z}_n,+)$ для некоторого $n$
+\begin{proof}
+Пусть $\mathcal{M}$ - подмоноид, порождённый $a$. $M$ - циклический
+\begin{enumerate}
+\item $\mathcal{M} \cong (\omega,+,0)$
+
+$x\in \mathcal{M}$ $x^{-1}$ $xx^{-1}=e$
+
+$x\in \mathcal{M}$ $x\neq e$ $x^{-1}\neq \mathcal{M}$
+
+$$0=h(x)+h(x^{-1})=h(xx^{-1})=h(e)=0$$
+
+Доказать что изоморфизм
+\item $\mathcal{M}$ - конечный $(i,j)$ моноид, если $i>0$, то в $\mathcal{M}$ есть нееденичный идемпотент, следовательно он необратимый, следовательно в группе должно быть $i=0$
+$$a^xa^y=\begin{cases} a^{x+y} &,\mbox{если } x+y<j\\
+a^{(x+y)\pmod j}&,\mbox{если } x+y\geq j\end{cases}$$
+$\mathcal{M}$ - группа
+$$a^x=a^{j-x}=a^{j\pmod j}=e$$
+$\mathcal{M}$ - группа порождённая $a$, $\mathcal{M}=\mathcal{G}$
+
+$h:a^x\rightarrow x$
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{thm}
+В циклической группе существуют нетривиальные группы тогда и только тогда когда она бесконечна или $n$ в $(\mathbb{Z}_n,+)$ составное 
+\begin{proof}
+\begin{enumerate}
+\item $\Rightarrow$ пусть имеется $(\mathbb{Z}_n,+)$, $n$ - простое, $a\neq 0$, $a<n$, $a$ и $n$ взаимно простые, следовательно $xa+yn=1$. пусть $b\in \mathbb{Z}$, тогда 
+$$b=b\cdot 1=b(ax+yn)=(bx)a+(by)n$$
+$$(\underbrace{a+a+...+a}_{bx})\mod n=(b-(by)n)\mod n=b\mod n=b$$
+
+Таким (КАКИМ) образом любые подгруппы, содержащие не только $0$ содержат $\mathbb{Z}_n$
+\item $\Leftarrow$ 
+\begin{enumerate}
+    \item бесконечная циклическая группа имеет нетривиальную подгруппу
+    \item пусть $n=xy$, тогда $(\mathbb{Z}_{xy},+)\supseteq \{0,x,2x,...,(y-1)x\}$
+  \end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{dfn}
+Порядок группы - количество элементов группы. $ord\mathcal{G}$\\
+Порядок элемента - порядок порождённой им циклической подгруппы $orda=ord\langle a\rangle$
+\end{dfn}
+
+\begin{exm}
+Пример на порядок через группу треугольника
+
+$$\mathcal{D}_3=\{e,r_1,r_2,s_1,s_2,s_3\}$$
+$$\ord \mathcal{D}_3=6$$
+
+\begin{align*}
+&\langle r_0\rangle=\{r_0\} & &\ord r_0=1\\
+&\langle r_1\rangle=\{r_0,r_1,r_2\} & &\ord r_1=3\\
+&\langle r_2\rangle=\{r_0,r_1,r_2\} & &\ord r_2=3\\
+&\langle s_1\rangle=\{r_0,s_1\} & &\ord s_1=2\\
+&\langle s_2\rangle=\{r_0,s_2\} & &\ord s_2=2\\
+&\langle s_3\rangle=\{r_0,s_3\} & &\ord s_3=2
+\end{align*}
+
+\end{exm}
+
+\begin{cnsq}
+$\ord e=1$, $\langle e\rangle=\{e\}$
+\end{cnsq}
+\begin{dfn}
+Пусть $\mathcal{G}$ - группа, $\mathcal{H}\subseteq \mathcal{G}$, $a\in \mathcal{G}$
+
+Левый смежный класс $a$ по $\mathcal{H}$ - $a\mathcal{H}=\{ab: b\in \mathcal{H}\}$
+
+Правый смежный класс $a$ по $\mathcal{H}$ - $\mathcal{H}a=\{ba: b\in \mathcal{H}\}$
+\end{dfn}
+
+\begin{exm}
+Пример смежных классов:
+
+$\langle s_1\rangle \subseteq \mathcal{D}_3$, $r_1\in \mathcal{D}_3$
+
+$$r_1\langle s_1\rangle = r_1\{r_0,s_1\}=\{r_1,s_2\}$$
+$$\langle s_1\rangle r_1 = \{r_0,s_1\}r_1=\{r_1,s_3\}$$
+$$r_1\langle s_1\rangle \neq \langle s_1\rangle r_1$$
+\end{exm}
+
+\begin{dfn}
+Нормальная подгруппа - подгруппа, у которой любой левый смежный класс совпадает с правым
+\end{dfn}
+
+\begin{exm}
+Пример нормальных групп
+$$\langle r_1\rangle=\{r_0,r_1,r_2\}\subseteq \mathcal{D}_3$$
+$$r_i\langle r_1\rangle=r_i\{r_0,r_1,r_2\}=\{r_{0+i},r_{1+i},r_{2+i}\}=\langle r_1\rangle$$
+$$\langle r_1\rangle r_i=\{r_0,r_1,r_2\}r_i=\{r_{0+i},r_{1+i},r_{2+i}\}=\langle r_1\rangle$$
+$$r_i\langle r_1\rangle=\langle r_1\rangle r_i$$
+$$s_i\langle r_1\rangle=\{s_ir_0,s_ir_1,s_ir_2\}=\{s_i,s_{i-1},s_{i+1}\}$$
+$$\langle r_1\rangle s_i=\{r_0s_i,r_1s_i,r_2s_i\}=\{s_i,s_{i+1},s_{i-1}\}$$
+$$s_i\langle r_1\rangle=\langle r_1\rangle s_i$$
+$\langle r_1\rangle$ - нормальная подгруппа
+
+\end{exm}
+
+\begin{thm}
+Если $\mathcal{G}$ - группа, $\mathcal{H}\subseteq \mathcal{G}$, и $\equiv$ - отношение принадлежности к одному левому смежному классу, то $\equiv$ - отношение эквивалентности
+\begin{proof}
+\begin{enumerate}
+\item Рефлексивность $a\in a\mathcal{H}\Rightarrow a\equiv a$
+\item Симметричность $a\equiv b\Rightarrow a \in x\mathcal{H}, b\in x\mathcal{H}\Rightarrow b\equiv a$
+\item Транзитивность $a\equiv b$, $b\equiv c\Rightarrow $
+\begin{align*}
+a,b&\in x\mathcal{H} & a &=xh_a & b=x&h_b \\
+b,c&\in y\mathcal{H} & b &=yh'_b & c=y&h_c 
+\end{align*} 
+$$xh_b=yh'_b\Rightarrow x=yh'_bh^{-1}_b\Rightarrow a=y\underbrace{h'_bh^{-1}_bh_a}_{\mathcal{H}}$$
+$$
+\begin{rcases}
+c \in y\mathcal{H}\\
+a\in y\mathcal{H}
+\end{rcases}
+a\equiv c
+$$
+\end{enumerate}
+\end{proof}
+\end{thm}
+
+\begin{cnsq}
+Каждый левый смежный класс является классом эквивалентности
+\end{cnsq}
+
+\begin{cnsq}
+Левые смежные классы или совпадают или не пересекаются
+\end{cnsq}
+
+\begin{cnsq}
+Количество элементов в левом смежном классе совпадает с $\ord \mathcal{H}$
+\begin{proof}
+Пусть $f:\mathcal{H}\rightarrow a\mathcal{H}$, $f(x)=ax$, тогда
+$$f(x)=f(y)\Rightarrow ax=ay\Rightarrow=a^{-1}ax=a^{-1}ay\Rightarrow x=y$$
+$f$ - взаимоодназначная функция, соответственно $\ord a\mathcal{H}=\ord \mathcal{H}$
+\end{proof}
+\end{cnsq}
+
+\begin{dfn}
+Индекс подгруппы - количество левых смежных классов $\operatorname{ind}H$
+\end{dfn}
+
+\begin{thm}
+Если $H$ - подгруппа $G$, то $\operatorname{ord}G=\operatorname{ord}H\cdot \ind H$
+\begin{proof}
+Разобьём группу $G$ на левые смежные классы. Их количество - $\ind H$, каждый содержит $\ord H$ элементов. Общее количество этих элементов - $\ind H\cdot \ord H$
+
+\end{proof}
+\end{thm}
+\begin{cnsq}
+$\operatorname{ind}H=\dfrac{\operatorname{ord}G}{\operatorname{ord}H}$
+\end{cnsq}
+
+\begin{cnsq}
+$\operatorname{ord}H|\operatorname{ord}G$
+\end{cnsq}
+
+\begin{cnsq}
+$\ord a| \ord \mathcal{G}$
+\begin{proof}
+$\mathcal{H}=\langle a\rangle$, $\ord a= \ord \mathcal{H}$
+
+\end{proof}
+\end{cnsq}
+
+\begin{thm}
+$a^{\operatorname{ord}a}=e$
+\begin{proof}
+$\langle a\rangle=\{\underbrace{a^0,a^1,...,a^{\ord a-1}}_{\ord a}\}$, $a^{\ord a}=a^0=e$
+
+\end{proof}
+\end{thm}
+
+
+\begin{thm}
+$a^{n}=e\Leftrightarrow \operatorname{ord}a|n$
+\begin{proof}
+Пусть $x=\ord a +r=n$, $(0\leq r< \ord a)$, тогда
+$$e=a^n=a^{x\ord a}\cdot a^r=(a^{\ord a})^x\cdot a^r=e^x\cdot a^r=a^r$$
+$a^r=e\Rightarrow r=0 \Rightarrow n=x\cdot \ord a\Rightarrow \ord a|n$
+
+\end{proof}
+\end{thm}
+
+\begin{thm}
+$a^{\operatorname{ord}G}=e$
+\begin{proof}
+$\ord a| \ord \mathcal{G}\Rightarrow \ord \mathcal{G}=x\cdot\ord a\Rightarrow a^{\ord \mathcal{G}}=(a^{\ord a})^x=e$
+
+\end{proof}
+\end{thm}
+
+\begin{exm}
+$\mathcal{A}_5$ - группа чётных перестановок из 5 элементов. В $\mathcal{A}_5$ нет нормальных подгрупп
+\begin{proof}
+ДОКАЖИ ДОМА)))))))))))))))))
+\end{proof}
+\end{exm}
+
+\begin{thm}
+Любая подгруппа индекса 2 является нормальной
+\begin{proof}
+\begin{enumerate}
+\item \begin{enumerate}
+\item $e\mathcal{H}=\mathcal{H}$
+\item $a\mathcal{H}\neq\mathcal{H}$
+
+$a\mathcal{H}=\bigslant{\mathcal{G}}{\mathcal{H}}$
+\end{enumerate}
+\item \begin{enumerate}
+\item $\mathcal{H}e=\mathcal{H}$
+\item $\mathcal{H}a\neq\mathcal{H}$
+
+$\mathcal{H}a=\bigslant{\mathcal{G}}{\mathcal{H}}$
+\end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{thm}
+\end{document}
