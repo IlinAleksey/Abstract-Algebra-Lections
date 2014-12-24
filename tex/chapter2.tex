@@ -3,14 +3,14 @@
 \begin{document}
 \section{Изоморфизм}
 \begin{dfn}
-\textbf{Изоморфизм} - Пусть $\Sigma$ - сигнатура, $\mathpzc{A}=(A,I)$, $\mathpzc{B}=(B,J)$ - \\
- универсальные алгебры сигнатуры $\Sigma$, тогда изоморфизм между $\mathpzc{A}$ и $\mathpzc{B}$ - это $h:\mathpzc{A}\rightarrow \mathpzc{B}$ - биективная функция, которая удовлетворяет следующему условию:
+\textbf{Изоморфизм} - Пусть $\Sigma$ - сигнатура, $\mathcal{A}=(A,I)$, $\mathcal{B}=(B,J)$ - \\
+ универсальные алгебры сигнатуры $\Sigma$, тогда изоморфизм между $\mathcal{A}$ и $\mathcal{B}$ - это $h:\mathcal{A}\rightarrow \mathcal{B}$ - биективная функция, которая удовлетворяет следующему условию:
 $$h(I(f_i)(a_1,...,a_n))=J(f_i)(h(a_1),...,h(a_n))$$
 для любых $a_1,...,a_n$ и $f_i\in \Sigma$
 \end{dfn}
 
 \begin{exm}
-Пример изоморфизма: пусть $\Sigma=(f^{(2)})$, $\mathpzc{A}=(\mathbb{R},+)$, $\mathpzc{B}=(\mathbb{R},\cdot)$
+Пример изоморфизма: пусть $\Sigma=(f^{(2)})$, $\mathcal{A}=(\mathbb{R},+)$, $\mathcal{B}=(\mathbb{R},\cdot)$
 
 Надо доказать: 
 $$h(a_1+a_2)=h(a_1)\cdot h(a_2)$$
@@ -34,7 +34,7 @@ $$h^{-1}(J(f_i)(b_1,...,b_{n_i}))=h^{-1}(h(I(f_i)(a_1,...,a_{n_1})))=I(f_i)(a_1,
 
 \begin{dfn}
 Системы, между которыми существует изоморфизм называют \textbf{изоморфными}
-$$\mathpzc{A}\simeq\mathpzc{B}$$
+$$\mathcal{A}\simeq\mathcal{B}$$
 операции в изоморфных системах обладают одними и теми же свойствами
 \end{dfn}
 
@@ -42,35 +42,35 @@ $$\mathpzc{A}\simeq\mathpzc{B}$$
 $t(x_1,...,x_n)$ - терм $t$ не содержит других переменных кроме $x_1,...,x_n$
 \end{dfn}
 \begin{dfn}
-Пусть $\mathpzc{A}$ - алгебра, $a_1,...,a_n$ - элементы алгебры $\mathpzc{A}$, тогда
+Пусть $\mathcal{A}$ - алгебра, $a_1,...,a_n$ - элементы алгебры $\mathcal{A}$, тогда
 $$t(a_1,...,a_n)=\sigma(t), \sigma(x_1)=a_1,...,\sigma(x_n)=a_n$$
 \end{dfn}
 \begin{thm}
-$h$ - изоморфизм между $\mathpzc{A}=(A,I)$ и $\mathpzc{B}=(B,J)$, то для любого терма $t(x_1,...,x_n)$ и любых $a_1,...,a_n$ выполняется
-$$h(t^{\mathpzc{A}}(a_1,...,a_n))=t^{\mathpzc{B}}(h(a_1),...,h(a_n))$$
+$h$ - изоморфизм между $\mathcal{A}=(A,I)$ и $\mathcal{B}=(B,J)$, то для любого терма $t(x_1,...,x_n)$ и любых $a_1,...,a_n$ выполняется
+$$h(t^{\mathcal{A}}(a_1,...,a_n))=t^{\mathcal{B}}(h(a_1),...,h(a_n))$$
 \end{thm}
 \begin{proof}
 Индукция по построению терма $t$
 \begin{enumerate}
 \item $t=x$
-$$t^{\mathpzc{A}}(a)=a\Leftrightarrow h(t^{\mathpzc{A}}(a))=h(a)\Leftrightarrow t^{\mathpzc{B}}(h(a))=h(a)$$
+$$t^{\mathcal{A}}(a)=a\Leftrightarrow h(t^{\mathcal{A}}(a))=h(a)\Leftrightarrow t^{\mathcal{B}}(h(a))=h(a)$$
 \item $t=c$
-$$\sigma(c)=I(c)=J(c)\Rightarrow t^{\mathpzc{A}}=I(c), t^{\mathpzc{B}}=J(c)\Rightarrow h(I(c))=J(c)$$
+$$\sigma(c)=I(c)=J(c)\Rightarrow t^{\mathcal{A}}=I(c), t^{\mathcal{B}}=J(c)\Rightarrow h(I(c))=J(c)$$
 по определению гомоморфизма
 \item $t=f(t_1,...,t_k)$
 \begin{multline*}
-h(t^{\mathpzc{A}}(a_1,...,a_n))=\\
-h(I(f)(t^{\mathpzc{A}}_{1}(a_1,...,a_n),...,t^{\mathpzc{A}}_{k}(a_1,...,a_n)))=\\
-J(f)(h(t^{\mathpzc{A}}_{1}(a_1,...,a_n)),...,h(t^{\mathpzc{A}}_{k}(a_1,...,a_n)))=\\
-J(f)(t^{\mathpzc{B}}_{1}(h(a_1),...,h(a_n)),...,t^{\mathpzc{B}}_{k}(h(a_1),...,h(a_n))=\\
-t^{\mathpzc{B}}(h(a_1),...,h(a_n))
+h(t^{\mathcal{A}}(a_1,...,a_n))=\\
+h(I(f)(t^{\mathcal{A}}_{1}(a_1,...,a_n),...,t^{\mathcal{A}}_{k}(a_1,...,a_n)))=\\
+J(f)(h(t^{\mathcal{A}}_{1}(a_1,...,a_n)),...,h(t^{\mathcal{A}}_{k}(a_1,...,a_n)))=\\
+J(f)(t^{\mathcal{B}}_{1}(h(a_1),...,h(a_n)),...,t^{\mathcal{B}}_{k}(h(a_1),...,h(a_n))=\\
+t^{\mathcal{B}}(h(a_1),...,h(a_n))
 \end{multline*}
 \end{enumerate}
 \end{proof}
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{R};\cdot)\not\cong\mathpzc{B}=(\mathbb{R}^{+};\cdot)$
+Доказать что $\mathcal{A}=(\mathbb{R};\cdot)\not\cong\mathcal{B}=(\mathbb{R}^{+};\cdot)$
 \begin{proof}
-Предположим что существует изоморфизм $h:\mathpzc{A}\rightarrow \mathpzc{B}$, тогда
+Предположим что существует изоморфизм $h:\mathcal{A}\rightarrow \mathcal{B}$, тогда
 
 $h(0)=x, x\in \mathbb{R}^{+}$
 $$x=h(0)=h(0\cdot 0)=h(0)\cdot h(0)=x^2$$
@@ -84,9 +84,9 @@ $h(0)=1=h(1)$ - противоречие ($h$ не биективна). Утве
 \end{proof}
 \end{exm}
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{R};+)\not\cong\mathpzc{B}=(\mathbb{R};\cdot)$
+Доказать что $\mathcal{A}=(\mathbb{R};+)\not\cong\mathcal{B}=(\mathbb{R};\cdot)$
 \begin{proof}
-Предположим что существует изоморфизм $h:\mathpzc{B}\rightarrow \mathpzc{A}$, тогда
+Предположим что существует изоморфизм $h:\mathcal{B}\rightarrow \mathcal{A}$, тогда
 
 $h(0)=x, h(1)=y; x,y\in \mathbb{R}$
 $$x=h(0)=h(0\cdot 0)=h(0)+ h(0)=2x\Rightarrow x=2x=0$$
@@ -96,9 +96,9 @@ $$y=h(1)=h(1\cdot 1)=h(1)+ h(1)=2y\Rightarrow y=2y=0$$
 \end{exm}
 
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{R};\cdot)\cong\mathpzc{B}=(\mathbb{C};\cdot)$
+Доказать что $\mathcal{A}=(\mathbb{R};\cdot)\cong\mathcal{B}=(\mathbb{C};\cdot)$
 \begin{proof}
-Предположим что существует изоморфизм $h:\mathpzc{B}\rightarrow \mathpzc{A}$, тогда
+Предположим что существует изоморфизм $h:\mathcal{B}\rightarrow \mathcal{A}$, тогда
 
 $h(x)=-1; x\in \mathbb{C},-1\in \mathbb{R}$
 
@@ -106,28 +106,28 @@ $h(x)=-1; x\in \mathbb{C},-1\in \mathbb{R}$
 \end{exm}
 
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{Z};{\operatorname{min}}^{(2)})\not\cong\mathpzc{B}=(\mathbb{Z};{\operatorname{max}}^{(2)})$
+Доказать что $\mathcal{A}=(\mathbb{Z};{\operatorname{min}}^{(2)})\not\cong\mathcal{B}=(\mathbb{Z};{\operatorname{max}}^{(2)})$
 \begin{proof}
 
 \end{proof}
 \end{exm}
 
 \begin{exm}
-Доказать что $\mathpzc{A}=(\omega;+)\not\cong\mathpzc{B}=(\omega^+;\cdot)$
+Доказать что $\mathcal{A}=(\omega;+)\not\cong\mathcal{B}=(\omega^+;\cdot)$
 \begin{proof}
 
 \end{proof}
 \end{exm}
 
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{Q};+)\not\cong\mathpzc{B}=(\mathbb{Q}^+;\cdot)$
+Доказать что $\mathcal{A}=(\mathbb{Q};+)\not\cong\mathcal{B}=(\mathbb{Q}^+;\cdot)$
 \begin{proof}
 
 \end{proof}
 \end{exm}
 
 \begin{exm}
-Доказать что $\mathpzc{A}=(\mathbb{Z};\cdot)\not\cong\mathpzc{B}=(\mathbb{G};\cdot)$
+Доказать что $\mathcal{A}=(\mathbb{Z};\cdot)\not\cong\mathcal{B}=(\mathbb{G};\cdot)$
 \begin{proof}
 
 \end{proof}

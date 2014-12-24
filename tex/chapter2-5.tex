@@ -3,7 +3,7 @@
 \begin{document}
 \section{Подалгебры и вложения}
 \begin{dfn}
-Подалгебра - алгебра $\mathpzc{B}=(B,J)$ является подалдгеброй $\mathpzc{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение на $B$ для всякого $f$
+Подалгебра - алгебра $\mathcal{B}=(B,J)$ является подалдгеброй $\mathcal{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение на $B$ для всякого $f$
 \end{dfn}
 \begin{dfn}
 Ограничение операции - $n$-местная операция $g$ на $B$ является ограничением операции $f$ множеством $B$ если 
@@ -18,24 +18,24 @@ $$(\mathbb{C},+,\cdot)\supseteq (\mathbb{R},+,\cdot)\supseteq (\mathbb{Q},+,\cdo
 $$A\subseteq B, B\subseteq C \Rightarrow A\subseteq C$$
 \end{cnsq}
 \begin{thm}
-Если $\mathpzc{A}=(A,I)$ - алгебра, то $B$ $(B\subseteq A; B\neq \emptyset)$ является носителем некоторой подалгебры тогда и только тогда, когда $B$ замкнута относительно сигнатурной операции в алгебре $\mathpzc{A}$
+Если $\mathcal{A}=(A,I)$ - алгебра, то $B$ $(B\subseteq A; B\neq \emptyset)$ является носителем некоторой подалгебры тогда и только тогда, когда $B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
 \begin{proof}
 \begin{enumerate}
 \item $\Rightarrow$
 
-$B$ - носитель подалгебры $\mathpzc{B}=(B,J)$ и $B\subseteq A$, тогда
-$$f^{\mathpzc{A}}(b_1,...,b_n)=f^{\mathpzc{B}}(b_1,...,b_n)\in B$$
-$B$ замкнута относительно сигнатурной операции в алгебре $\mathpzc{A}$
+$B$ - носитель подалгебры $\mathcal{B}=(B,J)$ и $B\subseteq A$, тогда
+$$f^{\mathcal{A}}(b_1,...,b_n)=f^{\mathcal{B}}(b_1,...,b_n)\in B$$
+$B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
 \item $\Leftarrow$
-$B$ замкнута относительно сигнатурной операции в алгебре $\mathpzc{A}$, тогда
+$B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$, тогда
 
 $J(f)$ - функция на $B$
 
-$J(f)(b_1,...,b_n)=f^{\mathpzc{A}}(b_1,...,b_n)\in B$
+$J(f)(b_1,...,b_n)=f^{\mathcal{A}}(b_1,...,b_n)\in B$
 
-$J(f)$ - ограниение $f^{\mathpzc{A}}$  на $B$
+$J(f)$ - ограниение $f^{\mathcal{A}}$  на $B$
 
-следовательно $\mathpzc{B}=(B,J)$ - подалгебра и $B$ - её носитель
+следовательно $\mathcal{B}=(B,J)$ - подалгебра и $B$ - её носитель
 \end{enumerate}
 \end{proof}
 \end{thm}

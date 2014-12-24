@@ -1,11 +1,13 @@
+\usepackage{cmap}
+
 \usepackage{subfiles}
 \usepackage{mathtext}
 \usepackage[T2A]{fontenc}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 
 
-\usepackage{amsmath,amssymb,amsthm,amscd,amsfonts,mathrsfs}
+\usepackage{amsmath,amssymb,amsthm,amscd,amsfonts,mathrsfs,amsthm}
 
 \usepackage{caption}
 \usepackage{float}
@@ -13,17 +15,19 @@
 \usepackage{tikz}
 
 \usepackage{braids}
-\newtheorem*{cnsq}{Следствие}
+
+\theoremstyle{plain}
+\newtheorem{cnsq}{Следствие}[section]
+
 \usepackage{euscript}
 \emergencystretch = 2em
-\newtheoremstyle{my_general}{12pt}{12pt}{}%
-{}{\sffamily}{:}{\newline}{}
+
+\theoremstyle{plain}
 \newtheorem{thm}{Теорема}[section]
-\theoremstyle{my_general}
+\theoremstyle{definition}
 \newtheorem{dfn}{Определение}[section]
-\theoremstyle{my_general}
-\newtheorem{sltn}{Решение}[section]
-\theoremstyle{my_general}
+
+\theoremstyle{plain}
 \newtheorem{exm}{Пример}[section]
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
@@ -33,6 +37,7 @@
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\stab}{stab}
+\DeclareMathOperator{\orb}{orb}
 
 \newenvironment{rcases}
   {\left.\begin{aligned}}
