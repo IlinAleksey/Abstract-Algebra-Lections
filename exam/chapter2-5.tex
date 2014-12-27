@@ -1,0 +1,52 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Подалгебры и вложения}
+\begin{dfn}
+Подалгебра - алгебра $\mathcal{B}=(B,J)$ является подалдгеброй $\mathcal{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение на $B$ для всякого $f$
+\end{dfn}
+\begin{dfn}
+Ограничение операции - $n$-местная операция $g$ на $B$ является ограничением операции $f$ множеством $B$ если 
+$$g(b_1,...,b_n)=f(b_1,...,b_n)$$
+для любых $b_1,...,b_n$ из $B$
+\end{dfn}
+\begin{exm}
+Пример подалгебры:
+$$(\mathbb{C},+,\cdot)\supseteq (\mathbb{R},+,\cdot)\supseteq (\mathbb{Q},+,\cdot)$$
+\end{exm}
+\begin{cnsq}
+$$A\subseteq B, B\subseteq C \Rightarrow A\subseteq C$$
+\end{cnsq}
+\begin{thm}
+Если $\mathcal{A}=(A,I)$ - алгебра, то $B$ $(B\subseteq A; B\neq \emptyset)$ является носителем некоторой подалгебры тогда и только тогда, когда $B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
+\begin{proof}
+\begin{enumerate}
+\item $\Rightarrow$
+
+$B$ - носитель подалгебры $\mathcal{B}=(B,J)$ и $B\subseteq A$, тогда
+$$f^{\mathcal{A}}(b_1,...,b_n)=f^{\mathcal{B}}(b_1,...,b_n)\in B$$
+$B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
+\item $\Leftarrow$
+$B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$, тогда
+
+$J(f)$ - функция на $B$
+
+$J(f)(b_1,...,b_n)=f^{\mathcal{A}}(b_1,...,b_n)\in B$
+
+$J(f)$ - ограниение $f^{\mathcal{A}}$  на $B$
+
+следовательно $\mathcal{B}=(B,J)$ - подалгебра и $B$ - её носитель
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{exm}
+Пример на теорему:
+
+\end{exm}
+
+\begin{thm}
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\end{document}

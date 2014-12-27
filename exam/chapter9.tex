@@ -1,0 +1,168 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Кольца и поля}
+\begin{dfn}[Кольцо]
+Кольцо - алгебра сигнатуры
+$$(+^{(2)},0^{(0)},{{}^{-}}^{(1)},\cdot^{(2)})$$
+обладающее свойствами:
+\begin{enumerate}
+\item $(a+b)+c=a+(b+c)$
+\item $a+0=a$
+\item $a+(-a)=0$
+\item $a+b=b+a$
+\item $a(b+c)=ab+ac$
+\end{enumerate}
+\end{dfn}
+\begin{dfn}[Ассоциативное кольцо]
+Кольцо с ассоциативностью умножения $(ab)c=a(bc)$
+\end{dfn}
+\begin{dfn}[Кольцо с единицей]
+Кольцо, в котором существует элемент $1$, такой что $a\cdot 1=1\cdot a=a$
+\end{dfn}
+\begin{dfn}[Коммутативное кольцо]
+Кольцо с коммутативностью умножения $ab=ba$
+\end{dfn}
+\begin{dfn}[Кольцо с делением]
+Если для любого элемента кольца $a\,(a\neq 0))$ существует $b:ab=1$, то такое кольцо называется кольцом с делением
+\end{dfn}
+\begin{dfn}[Тело]
+Тело - ассоциативное, коммутативное кольцо с делением
+\end{dfn}
+\begin{dfn}[Поле]
+Поле - ассоциативное, коммутативное кольцо с делением и единицей
+\end{dfn}
+\begin{exm}[Примеры колец]
+
+\end{exm}
+\begin{thm}
+Для любых элементов кольца $a,b$ справедливы следующие утверждения:
+\begin{enumerate}
+\item $a0=0a=0$
+\item $(-a)b=a(-b)=-(ab)$
+\end{enumerate}
+\begin{proof}
+
+\end{proof}
+\end{thm}
+
+\begin{cnsq}
+В кольце с $1$ ноль необратим.
+\end{cnsq}
+\begin{dfn}[Делитель нуля]
+Пусть $a\cdot b=0\, a,b\neq 0$, тогда $a$ - левый делитель нуля, $b$ - правый делитель нуля.
+\end{dfn}
+\begin{exm}[Пример делителей нуля]
+
+\end{exm}
+\begin{thm}
+Делители нуля необратимы
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{dfn}[Идемпотент кольца]
+Такие элементы кольца, для которых выполняется $a=a^2$
+\end{dfn}
+\begin{thm}
+Идемпотенты - делители нуля
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{dfn}[Целостное кольцо]
+Ассоциативное, коммутативное кольцо с единицей без делителей нуля
+\end{dfn}
+\begin{thm}
+Конечное целое кольцо ?????
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{thm}
+Каждое целостное кольцо может быть достроено до поля
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{dfn}[Гомоморфизм колец]
+$h:R\to S$ - гомоморфизм, определённый так: $a\equiv b\Leftrightarrow h(a)=h(b)$
+\end{dfn}
+\begin{dfn}[Ядро кольца]
+$h:R\to S$ - гомоморфизм, тогда ядро кольца $\Ker h=\{a\in R:h(a)=0\}$ 
+\end{dfn}
+\begin{thm}
+Ядро кольца - подкольцо
+\end{thm}
+\begin{dfn}[Идеал]
+$R$ - кольцо, $\mathcal{I}\subseteq R$ - идеал (левый, правый, двусторонний), если
+\begin{enumerate}
+\item $\mathcal{I}$ - подкольцо
+\item для любого $x\in R$ $x\mathcal{I}\subseteq\mathcal{I}$ (левый идеал), $\mathcal{I} x\subseteq\mathcal{I}$ (правый идеал)
+\end{enumerate}
+\end{dfn}
+\begin{exm}[Пример идеалов]
+
+\end{exm}
+\begin{thm}
+$R$ - ассоциативное кольцо с единицей или $R$ - тело или $R$ тогда и только тогда когда в $R$ Нет других идеалов, кроме $\{0\}$ и $R$
+\end{thm}
+\begin{dfn}[Булевое кольцо]
+
+\end{dfn}
+\begin{thm}
+Пусть $I$ - двухсторонний идеал в $R$, тогда отношение $\equiv: x\equiv y \Leftrightarrow x-y\in I$ является конгруэнтностью
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{cnsq}
+Существует фактор-алгебра $\bigslant{R}{\equiv}$, такая что ??????????????????
+\end{cnsq}
+
+\begin{cnsq}
+$I=\Ker h$, где $h:R\to\bigslant{R}{\equiv} $
+\begin{proof}
+
+\end{proof}
+\end{cnsq}
+\begin{dfn}[Простой идеал]
+Пусть $R$ - ассоциативное, коммутативное кольцо с единицей, тогда $I$ - простой идеал, если $ab\in I\Leftrightarrow a\in I$ или $b\in I$
+\end{dfn}
+\begin{dfn}[Максимальный идеал]
+Пусть $R$ - ассоциативное, коммутативное кольцо с единицей, тогда $I$ - максимальный идеал, если для любого идеала $J: I\subseteq J, I\neq J$ выполняется $J=R$
+\end{dfn}
+\begin{dfn}[Главный идеал]
+Пусть $R$ - ассоциативное, коммутативное кольцо с единицей, тогда $I$ - главный идеал, если для некоторого $a\in R$ $I=aR$
+\end{dfn}
+\begin{exm}[??????]
+
+\end{exm}
+\begin{lemma}
+Если $I$ и $J$ - идеалы, то $I+J$ тоже идеал
+\begin{proof}
+
+\end{proof}
+\end{lemma}
+\begin{thm}
+Пусть $R$ - ассоциативное, коммутативное кольцо с единицей, $I$ - идеал, тогда
+\begin{enumerate}
+\item $I$ - простой идеал $\Leftrightarrow$ $\bigslant{R}{I}$ - целостное
+\item $I$ - максимальный идеал $\Leftrightarrow$ $\bigslant{R}{I}$ - поле
+\end{enumerate}
+\begin{proof}
+
+\end{proof}
+\end{thm}
+\begin{dfn}[Евклидово кольцо]
+$R$ - ассоциативное, коммутативное кольцо с единицей, $R$ - евклидово, если для каждого элемента $a$ этого кольца существует его норма $\Vert a\Vert$.
+\end{dfn}
+\begin{dfn}[Евклидова норма]
+Это некоторая функция элемента кольца, такая что
+\begin{enumerate}
+\item $\Vert a\Vert \in \omega$
+\item если $a,b\neq 0$, то $\Vert ab\Vert \geq \max(\Vert a\Vert,\Vert b\Vert)$
+\item если $$
+\end{enumerate}
+\end{dfn}
+\end{document}
