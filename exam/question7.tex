@@ -1,0 +1,80 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Группы, абелевы группы, циклические группы. Вложение моноида в группу}
+\begin{dfn}[Группа]
+Группа - моноид, в котором все элементы обратимы
+\end{dfn}
+\begin{dfn}[Тривиальная группа]
+Тривиальная группа - группа, состоящая из одного элемента
+\end{dfn}
+\begin{thm}
+Если $M$ - моноид и $G\subseteq M$ - подмножество обратимых элементов, то $G$ - группа
+\begin{proof}
+
+$G\subseteq M$ следовательно $G$ ассоциативна, 
+$e$ - обратимый следовательно $G$ имеет нейтральный элемент. 
+Надо доказать замкнутость: $x*y\in G$
+
+$x',y'$ - обратные к $x$ и $y$ элементы, тогда
+$$(x*y)*(y'*x')=x*(y*y')*x'=x*e*x'=x*x'=e$$
+$$(y'*x')*(x'*y')=y'*(x'*x)*y=y*e*y'=y*y'=e$$
+$x*y$ обратим $\Rightarrow xy\in G$
+
+если $x\in G$, то $x'*x=x*x'=e$, тогда $x'$  имеет обратный элемент, тогда $x'\in G$. Любой элемент $G$ имеет обратный.
+
+$G$ - группа. Теорема доказана.
+
+\end{proof}
+\end{thm}
+\begin{dfn}[Абелева группа]
+Абелева группа - группа, в которой $xy=yx$
+\end{dfn}
+\begin{dfn}[Циклическая группа]
+\end{dfn}
+\begin{thm}[Теорема Гротендика]
+Каждый коммутативный моноид, в котором все элементы сократимы можно вложить в группу
+\begin{proof}
+Пусть $M$ - коммутативный моноид, $G'=M\times M=(a,b)$, где $a,b\in M$, $(a_1,b_1)(a_2,b_2)=(a_1a_2,b_1b_2)$, $(e_1,e_2)$ - нейтральный элемент.
+
+Пусть $(a,b)\equiv (c,d)\Leftrightarrow ad=bc$. Является ли $\equiv$ конгруэнтностью?
+
+\begin{enumerate}
+\item $(a,b)\equiv(a,b)$, $ab=ba$
+\item $(a,b)\equiv(c,d)$, $ad=bc\Rightarrow cb=da\Rightarrow (c,d)\equiv (a,b)$ 
+\item $(a,b)\equiv(c,d)\equiv(u,v)\Rightarrow(a,b)\equiv(u,v)$
+\end{enumerate}
+
+Надо доказать:
+$$(a_1,b_1)\equiv(a_2,b_2), (c_1,d_1)\equiv(c_2,d_2)\Rightarrow(a_1c_1,b_1d_1)\equiv(a_2c_2,b_2d_2)$$
+
+\begin{multline*}
+(a_1,b_1)\equiv(a_2,b_2), (c_1,d_1)\equiv(c_2,d_2)\Rightarrow \\ 
+a_1b_2=b_1a_2, c_1d_2=d_1c_2\Rightarrow a_1b_2c_1d_2=b_1a_2d_1c_2\Rightarrow \\
+ (a_1c_1)(b_2d_2)=(b_1d_1)(a_2c_2)\Rightarrow \\
+ (a_1c_1,b_1d_1)\equiv(a_2c_2,b_2d_2)
+\end{multline*}
+
+$(a,b)\equiv (c,d)\Leftrightarrow ad=bc$ - конгруэнтность
+\vspace{1em}
+
+Пусть $G = \bigslant{G'}{\equiv}$ надо доказать что $G$ - группа и $M$ вкладывается в $G$
+
+$$ab=ba\Rightarrow abe=ab=ba=bae\Rightarrow (ab,ba)\equiv(e,e)$$
+$$\widehat{(a,b)}*\widehat{(b,a)}=\widehat{(ab,ba)}=\widehat{(e,e)}$$
+$\Rightarrow$ каждый элемент $G$ имеет обратный $\Rightarrow$ $G$ - группа
+
+Пусть $h:M\rightarrow G$ и $h(a)=\widehat{(a,e)}$, тогда
+$$h(ab)=\widehat{(ab,e)}=\widehat{(a,e)}\widehat{(b,e)}=h(a)h(b)$$
+$$h(e)=\widehat{(e,e)}$$
+$h$ - гомоморфизм
+
+Пусть $h(a)=h(b)$
+$$\widehat{(a,e)}=\widehat{(b,e)}\Rightarrow (a,e)\equiv(b,e)\Rightarrow ae=eb \Rightarrow a=b$$
+следовательно $h$ - инъекция, следовательно $h$ - вложение
+
+\end{proof}
+\end{thm}
+\begin{exm}[Пример на теорему Гротендика]
+\end{exm}
+\end{document}

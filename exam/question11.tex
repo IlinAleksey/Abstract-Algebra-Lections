@@ -1,161 +1,7 @@
 \documentclass[../main/document.tex]{subfiles}
 
 \begin{document}
-\section{Гомоморфизмы группы}
-\begin{dfn}[Факторгруппа]
-Рассмотрим группу $G$ и ее нормальную подгруппу $H$. Пусть $G/H$ — множество смежных классов $G$ по $H$. Определим в $G/H$ операцию умножения по следующему правилу: $aH\cdot bH=(ab)H$
-\end{dfn}
-
-\begin{thm}
-Определение произведения смежных классов корректно. То есть произведение смежных классов не зависит от выбранных представителей $a$ и $b$
-\begin{proof}
-Пусть $aH,bH\in G/H,\,a_1=a\cdot h_a\in aH,\,b_1=b\cdot h_b\in bH$. Докажем, что $abH=a_1 b_1 H$. Достаточно показать, что $a_1\cdot b_1 \in abH$.
-
-В самом деле, $a_1\cdot b_1=a\cdot h_a\cdot b\cdot h_b=a\cdot b\cdot (b^{-1}\cdot h_a\cdot b)\cdot h_b$. Элемент $h = (b^{-1}\cdot h_a\cdot b)$ лежит в $H$ по свойству нормальности $H$. Следовательно, $a\cdot b\cdot h\cdot h_b\in abH$.
-\end{proof}
-\end{thm}
-
-\begin{thm}
-Если $G$ и $H$ - группа, $h:G\rightarrow H$ и $h(a*b)=h(a)*h(b)$, то $h$ - гомоморфизм
-\begin{proof}
-$h(e)=h(e*e)=h(e)*h(e)$
-
-$h(e)$ - идемпотент в $\mathcal{H}$, следовательно $h(e)=e$
-\begin{multline*}
-h(a^{-1})=h(a^{-1})*e=h(a^{-1})*h(a)*(h(a))^{-1}=\\
-h(a^{-1}*a)*(h(a))^{-1}=h(e)*(h(a))^{-1}=e*(h(a))^{-1}=(h(a))^{-1}
-\end{multline*}
-\end{proof}
-\end{thm}
-
-\begin{dfn}[Порождённая конгруэнтность]
-Конгруэнтность порождённая $h$ - если $a\equiv b \Leftrightarrow h(a)=h(b)$ - конгруэнтность, то $h[A]= \bigslant{A}{\equiv}$ 
-\end{dfn}
-
-\begin{thm}
-Если $h:G\rightarrow H$ - гомоморфизм, $\equiv$ - конгруэнтность порождённая $h$, то классы эквивалентные $e$ в $G$ являются нормальными подгруппами
-\begin{proof}
-Пусть $a,b\in f\Rightarrow ab^{-1}\in f$, $a\equiv e$, $b\equiv e$, $b^{-1}\equiv e^{-1}\equiv e$, $ab^{-1}\equiv ee\equiv e$
-
-$$a\{b\in \mathcal{G}:b\equiv e\}\ni c$$
-$$aba^{-1}\in\{b\in \mathcal{G}:b\equiv e\}a\ni c$$
-
-$$c=ab=abe=aba^{-1}a$$
-$$b\equiv e \quad a\equiv a\quad a^{-1}\equiv a^{-1}$$
-$$aba^{-1}\equiv aea^{-1}=e$$
-$$aba^{-1}\equiv e$$
-$$aba^{-1}a=abe=ab=c$$
-\end{proof}
-"И в обратную сторону". Хотя я в душе не знаю как в эту получилось.
-\end{thm}
-
-\begin{dfn}[Ядро подгруппы]
-Ядро подгруппы - множество элементов эквивалентных $e$. $\operatorname{Ker}h$
-\end{dfn}
-
-\begin{thm}
-$G$ - группа, $H$ - нормальная подгруппа, $a\equiv b \Leftrightarrow$ $a$ и $b$ принадлежат одному левому классу, то $\equiv$ - конгруэнтность
-\begin{proof}
-Пусть $a\equiv b$, $c\equiv d$, надо доказать
-\begin{enumerate}
-\item $ac\equiv bd$
-\item $a^{-1}\equiv b^{-1}$ (зачем)
-\end{enumerate}
-\begin{enumerate}
-\item 
-\begin{align*}
-a,b&\in x\mathcal{H} & a&=xh_a,  b=xh_b\\
-c,d&\in y\mathcal{H} & c&=yh_c,  d=yh_d
-\end{align*}
-$ac=xh_a\cdot yh_c$, $h_ay=yh'$, $h_ay\in \mathcal{H}y=y\mathcal{H}$
-$$
-\begin{rcases}
-ac=xh_ayh_c=xy\underbrace{h'h_c}_{\in\mathcal{H}}\in xy\mathcal{H}\\
-bd=xh_byh_d=xy\underbrace{h''h_d}_{\in\mathcal{H}}\in xy\mathcal{H}
-\end{rcases}
-\text{эквивалентные}
-$$
-$h_by=yh''$, $h_by\in \mathcal{H}y=y\mathcal{H}$
-\item
-\begin{align*}
-&h_a & &h_b\\
-&h^{-1}_a & &h^{-1}_b\\
-&\mathcal{H}x^{-1} & &\mathcal{H}x^{-1}
-\end{align*}
-$a^{-1},b^{-1}\in x^{-1}\mathcal{H}$
-\end{enumerate}
-\end{proof}
-\end{thm}
-
-\begin{dfn}[щито]
-$\mathcal{G}$ - группа, $\mathcal{H}$ - нормальная подгруппа, $\equiv$ - отношение конгруэнтности. Тогда $\bigslant{\mathcal{G}}{\equiv}=\bigslant{\mathcal{G}}{\mathcal{H}}$
-\end{dfn}
-
-\begin{cnsq}
-Если $h:\mathcal{G}\rightarrow \mathcal{H}$ - гомоморфизм, тогда $h[\mathcal{G}]=\bigslant{\mathcal{G}}{\Ker h}$
-\begin{proof}
-$h[\mathcal{G}]=\bigslant{\mathcal{G}}{\equiv}=\bigslant{\mathcal{G}}{\Ker h}$
-\end{proof}
-\end{cnsq}
-
-\begin{exm}
-$$\mathcal{D}_3=\{e,r_1,r_2,s_1,s_2,s_3\}$$
-$\langle r_1\rangle$ - подгруппа вращений
-
-$\langle r_1\rangle$
-
-$S_1\langle r_1\rangle$
-
-\begin{table}[h]
-\centering
-\caption*{Таблица умножения (ЧЕГО???)}
-\renewcommand*{\arraystretch}{1.4}
-\begin{tabular}{c|c|c}
-  & $\langle r_1\rangle$ & $S_1\langle r_1\rangle$ \\ \hline
-$\langle r_1\rangle$ & $\langle r_1\rangle$ & $S_1\langle r_1\rangle$ \\ \hline
-$S_1\langle r_1\rangle$ & $S_1\langle r_1\rangle$ & $\langle r_1\rangle$  \\ 
-\end{tabular}
-\end{table}
-\end{exm}
-
-\begin{exm}
-$(\mathbb{R},+)\supseteq (\mathbb{Z},+)$
-
-$a+\mathbb{Z}$
-
-$ba\in \mathbb{Z}$
-
-$a+\mathbb{Z}=b+\mathbb{Z}$
-
-$a\in [0,1)$
-
-$(a+\mathbb{Z})+(b+\mathbb{Z})=(a+b)=(a+b)\mod 1$
-
-$\mathbb{C}_1=\{z\in\mathbb{C},\vert z\vert=1\}$, $(\mathbb{C}_1,\cdot)$
-
-$h(x)=e^{2nix}$
-
-$x\in \mathbb{R}=e^{2nix}\in \mathbb{C}_1$
-
-$h(x+y)=e^{2ni(x+y)}=e^{2nix}e^{2niy}=h(x)h(y)$
-
-$h:(\mathbb{R},+)\rightarrow (\mathbb{C},\cdot)$
-
-$r\in \Ker h \Leftrightarrow r\equiv e$
-
-$h(r)=h(e)$
-
-$h(r)=h(0)$
-
-$e^{2nix}=e^{2nix}=1$
-
-$e^{2nix}=2n\cdot k, k\in \mathbb{Z}$
-
-$r\in \mathbb{Z}$
-
-$\Ker h\in \mathbb{Z}$
-\end{exm}
-
+\section{Действие группы на множестве , орбиты}
 \begin{dfn}
 $\mathcal{G}$ - группа, $A$ - множество, образующее группу, тогда определяющим соотношением называют равенство вида $t(a)=s(a)$, где $t,s$ - термы, $a\in A$
 \end{dfn}
@@ -165,7 +11,7 @@ $A=\{a,b\}$, $a^2=b^2$, $a^3b=ba$
 \end{exm}
 
 \begin{dfn}
-$A$ - множество элементов, $X$ - множество определяющих соотношений. Группа, порождённая $A$ и $X$ - $\mathcal{G}$ такач, что
+$A$ - множество элементов, $X$ - множество определяющих соотношений. Группа, порождённая $A$ и $X$ - $\mathcal{G}$ такая, что
 \begin{enumerate}
 \item образована при помощи $A$
 \item в $\mathcal{G}$ выполняются все определяющие соотношения из $X$
@@ -429,5 +275,4 @@ $G$ действует на множестве $S$, тогда $\vert S\vert=\su
 \begin{cnsq}
 Если $\ord G=p^k$, $p$ - простое, то $Z\neq \{e\}$
 \end{cnsq}
-
 \end{document}

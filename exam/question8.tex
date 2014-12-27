@@ -1,0 +1,52 @@
+\documentclass[../main/document.tex]{subfiles}
+
+\begin{document}
+\section{Группы пере становок, задание групп определяющими соотношениями.}
+\begin{dfn}[Группа перестановок]
+Группа перестановок - группа перестановок множества $S$ называется группа всех биекций $f:S\rightarrow S$. $(F,\circ,e,{ }^{-1})$
+\end{dfn}
+\begin{exm}[Пример группы перестановок]
+\end{exm}
+\begin{dfn}[Симметрическая группа порядка]
+Симметрическая группа порядка $n$: $S$ - конечно и состоит из $n$ элементов. $(A,\circ,e,{ }^{-1})$, $A$ - множество автоморфизмов $h:S\rightarrow S$
+\end{dfn}
+\begin{exm}[Пример симметрической группы] \label{TriangleGroup}
+Пример симметрической группы:
+
+\begin{tikzpicture}
+\draw (0,0) -- (2,3.46410161514) -- (4,0)-- (0,0);
+\draw	(0,0) node[anchor=north east] {2}
+		(2,3.46410161514) node[anchor=south] {1}
+		(4,0) node[anchor=north west] {3};
+\end{tikzpicture}
+
+$A=\{e,r_1,r_2,s_1,s_2,s_3\}$
+\begin{itemize}
+
+  \item $e$ - тождественное преобразование
+  \item $r_1, r_2$ - поворот на $120^{\circ}$ и $240^{\circ}$ соответственно
+  \item $s_1, s_2, s_3$ - оборот вокруг высоты, идущей из первой, второй и третьей вершины соответственно
+\end{itemize}
+
+$$\mathbf{D}_3=(A,\circ)$$
+
+\begin{table}[H]
+\centering
+\caption*{Таблица умножения $\circ$}
+\renewcommand*{\arraystretch}{1.4}
+\begin{tabular}{c|c|c|c|c|c|c}
+  & $e$ & $r_1$ & $r_2$ & $s_1$& $s_2$ & $s_3$  \\ \hline
+$e$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$r_1$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$r_2$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_1$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_2$ & $e$ & $x$ & $e$ & $x$& $e$ & $x$ \\ \hline
+$s_3$ & $x$ & $x$& $e$ & $x$& $e$ & $x$ \\ 
+\end{tabular}
+\end{table}
+\end{exm}
+
+\begin{exm}[задание групп определяющими соотношениями]
+
+\end{exm}
+\end{document}

@@ -31,6 +31,18 @@
 \theoremstyle{plain}
 \newtheorem{lemma}{Лемма}[section]
 
+%%table of contents
+	\usepackage{tocloft}
+
+	\cftsetindents{section}{0em}{2em}
+	\cftsetindents{subsection}{0em}{2em}
+
+	%\renewcommand\cfttoctitlefont{\hfill\Large\bfseries}
+	%\renewcommand\cftaftertoctitle{\hfill\mbox{}}
+	
+	\renewcommand{\cftsecfont}{\normalsize}
+	\setcounter{tocdepth}{2}
+
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 \def\dotminus{\mathbin{\ooalign{\hss\raise1ex\hbox{.}\hss\cr
