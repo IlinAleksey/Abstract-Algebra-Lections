@@ -1,5 +1,7 @@
-LaTeX-Lections
+Abstract-Algebra-Lections
 ==============
+Лекции по Общей Алгебре as told by Dudakov
+
 Есть две ветви: main И exam. В main главы соотсветствуют главам билетов. В exam - билетам.
 
 в папке main хранится главный документ, в папках  tex и exam - главы по отдельности
