@@ -5,7 +5,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
-
+\usepackage{mathtools}
 
 \usepackage{amsmath,amssymb,amsthm,amscd,amsfonts,mathrsfs,amsthm}
 
@@ -53,9 +53,9 @@
 \DeclareMathOperator{\stab}{stab}
 \DeclareMathOperator{\orb}{orb}
 
-\newenvironment{rcases}
-  {\left.\begin{aligned}}
-  {\end{aligned}\right\rbrace}
+%\newenvironment{rcases}
+%  {\left.\begin{aligned}}
+%  {\end{aligned}\right\rbrace}
   
 %left bracket%
 \makeatletter
@@ -70,4 +70,18 @@
   \def\arraystretch{1.2}%
   \array{@{}l@{\quad}l@{}}%
 }
+\makeatother
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}%
+
+% Swap the definition of \abs* and \norm*, so that \abs
+% and \norm resizes the size of the brackets, and the 
+% starred version does not.
+\makeatletter
+\let\oldabs\abs
+\def\abs{\@ifstar{\oldabs}{\oldabs*}}
+%
+\let\oldnorm\norm
+\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
