@@ -1,23 +1,35 @@
 \documentclass[../main/document.tex]{subfiles}
 
 \begin{document}
-\section{Подалгебры, порождающие элементы, \\вложения}
-\begin{dfn}
+
+\section{Подалгебры, порождающие элементы,\\ вложения}
+
+\begin{dfn}[Подалгебра]
 Подалгебра - алгебра $\mathcal{B}=(B,J)$ является подалдгеброй $\mathcal{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение на $B$ для всякого $f$
 \end{dfn}
-\begin{dfn}
+\begin{dfn}[Ограничение операции]
 Ограничение операции - $n$-местная операция $g$ на $B$ является ограничением операции $f$ множеством $B$ если 
 $$g(b_1,...,b_n)=f(b_1,...,b_n)$$
 для любых $b_1,...,b_n$ из $B$
 \end{dfn}
-\begin{exm}
+\begin{exm}[Пример ограничения операции]
+
+\end{exm}
+\begin{exm}[Пример подалгебры]
 Пример подалгебры:
 $$(\mathbb{C},+,\cdot)\supseteq (\mathbb{R},+,\cdot)\supseteq (\mathbb{Q},+,\cdot)$$
+\begin{proof}
+
+\end{proof}
 \end{exm}
 \begin{cnsq}
+Отношение "является подалгеброй" транзитивно
 $$A\subseteq B, B\subseteq C \Rightarrow A\subseteq C$$
+\begin{proof}
+
+\end{proof}
 \end{cnsq}
-\begin{thm}
+\begin{thm}\label{carrier-theorem}
 Если $\mathcal{A}=(A,I)$ - алгебра, то $B$ $(B\subseteq A; B\neq \emptyset)$ является носителем некоторой подалгебры тогда и только тогда, когда $B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
 \begin{proof}
 \begin{enumerate}
@@ -39,8 +51,7 @@ $J(f)$ - ограниение $f^{\mathcal{A}}$  на $B$
 \end{enumerate}
 \end{proof}
 \end{thm}
-\begin{exm}
-Пример на теорему:
+\begin{exm}[Пример на \ref{carrier-theorem}]
 
 \end{exm}
 

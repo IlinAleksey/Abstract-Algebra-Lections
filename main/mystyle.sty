@@ -2,9 +2,23 @@
 
 \usepackage{subfiles}
 \usepackage{mathtext}
-\usepackage[T2A]{fontenc}
+\usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
+\usepackage[left=15mm, top=20mm, right=15mm, bottom=20mm]{geometry}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[bookmarksnumbered,backref]{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={Sharelatex Example},
+    bookmarks=true,
+    pdfpagemode=FullScreen,
+}
+\usepackage{bookmark}
+
 \usepackage{mathtools}
 
 \usepackage{amsmath,amssymb,amsthm,amscd,amsfonts,mathrsfs,amsthm}
@@ -13,23 +27,29 @@
 \usepackage{float}
 
 \usepackage{tikz}
+%\usepackage{russianb}
 
 \usepackage{braids}
-
-\theoremstyle{plain}
-\newtheorem{cnsq}{Следствие}[section]
-
 \usepackage{euscript}
-\emergencystretch = 2em
+\setlength{\emergencystretch}{2em}
 
-\theoremstyle{plain}
+\newtheoremstyle{mystyle}{}{}{\slshape}{}{\bfseries }{.}{ }{}
+\theoremstyle{mystyle}
+
+
+\theoremstyle{mystyle}
 \newtheorem{thm}{Теорема}[section]
 \theoremstyle{definition}
 \newtheorem{dfn}{Определение}[section]
 \theoremstyle{plain}
 \newtheorem{exm}{Пример}[section]
-\theoremstyle{plain}
+\theoremstyle{mystyle}
 \newtheorem{lemma}{Лемма}[section]
+
+\renewenvironment{proof}{$ $\newline{\scshape Доказательство.\,}\normalfont}{\qed\newline}
+
+\theoremstyle{mystyle}
+\newtheorem{cnsq}{Следствие}[section]
 
 %%table of contents
 	\usepackage{tocloft}
@@ -52,6 +72,8 @@
 \DeclareMathOperator{\Ker}{Ker}
 \DeclareMathOperator{\stab}{stab}
 \DeclareMathOperator{\orb}{orb}
+
+
 
 %\newenvironment{rcases}
 %  {\left.\begin{aligned}}
@@ -85,3 +107,8 @@
 \let\oldnorm\norm
 \def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
 \makeatother
+
+\newcommand{\cyrN}{\mbox{\usefont{T2A}{\rmdefault}{m}{n}\CYRN}}
+\newcommand{\cyrO}{\mbox{\usefont{T2A}{\rmdefault}{m}{n}\CYRO}}
+\newcommand{\cyrD}{\mbox{\usefont{T2A}{\rmdefault}{m}{n}\CYRD}}
+\DeclareMathOperator{\Nod}{\cyrN\cyrO\cyrD}

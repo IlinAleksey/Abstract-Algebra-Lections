@@ -22,9 +22,13 @@ $$t=t_1*t_2=(a_{1}a_{2}...a_{m})(a_{m+1}...a_n)=a_{1}a_{2}...a_{n}$$
 $$t=t_1*a_n=(a_{1}a_{2}...a_{m})*a_n=a_{1}a_{2}...a_{n}$$
 \item $1\leq m\leq n-1$
 \begin{multline*}
-t=t_1*t_2=(a_{1}a_{2}...a_{m})(a_{m+1}...a_n)=(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})a_n=\\
-(a_{1}a_{2}...a_{n-1})a_n=a_{1}a_{2}...a_{n}
+t=t_1*t_2=(a_{1}a_{2}...a_{m})(a_{m+1}...a_n)=(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})a_n
 \end{multline*}
+Так как длина $(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})$ равна $n-1$ то выполняется индукционное предположение и
+$$(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})=(a_{1}a_{2}...a_{n-1})$$
+соотвественно
+$$(a_{1}a_{2}...a_{m})(a_{m+1}...a_{n-1})a_n=
+(a_{1}a_{2}...a_{n-1})a_n=a_{1}a_{2}...a_{n}$$
 \end{enumerate}
 \end{proof}
 \end{thm}
@@ -91,21 +95,17 @@ $$((f\circ g)h)(a)=(f(g\circ h))(a)$$
 $(\omega;+)$ - $0$
 \end{exm}
 
-\begin{dfn}[Моноид типа $(i,j-i)$]
-Моноид типа $(i,j-i)$ - моноид с элементами $$???$$
+\begin{dfn}[Обратный элемент]$ $\\
+
+$b_l$ - левый обратный для элемента $a$, если $b_l*a=e$,
+
+$b_r$ - правый обратный для элемента $a$, если $a*b_l=e$,
+
+$b$ - обратный для элемента $a$, если $b*a=a*b=e$
 \end{dfn}
 
-\begin{thm}
-В моноиде типа $(i,j-i)$, где $i>0$ существует идемпотент $b\neq e$
-\begin{proof}
-
-\end{proof}
-\end{thm}
-
-\begin{dfn}[Обратный элемент]
-$b_l$ - левый обратный для элемента $a$, если $b_l*a=e$,
-$b_r$ - правый обратный для элемента $a$, если $a*b_l=e$,
-$b$ - обратный для элемента $a$, если $b*a=a*b=e$
+\begin{dfn}[Обратимый элемент]
+Элемент, для которого существует обратный
 \end{dfn}
 \begin{exm}
 Пример чего-то:
@@ -128,7 +128,7 @@ $$
 		(4,0) node[anchor=north] {1}
 		(0,4) node[anchor=east] {1};
 % graph
-\draw[thick] (0,0) -- (1.8,4) --(3,3) -- (6,4);
+\draw[thick] (0,0) -- (1.8,4)  -- (6,4);
 
 % dotted lines
 \draw[dotted] (1.8,0) -- (1.8,5);
@@ -155,19 +155,19 @@ $$h(x_1\cap x_2)=h(x_1)\cap h(x_2)$$
 \end{proof}
 \end{exm}
 \begin{exm}[Пример полугруппы]
-Является ли $(\omega,\NOD())$ полугруппой
+Является ли $(\omega,\Nod())$ полугруппой
 \begin{proof}
 Предположим что является, надо доказать
-$$\NOD(\NOD(x,y),z)=\NOD(x,\NOD(y,z))$$
+$$\Nod(\Nod(x,y),z)=\Nod(x,\Nod(y,z))$$
 \begin{enumerate}
 \item $\Rightarrow$
-Пусть $d: d|\NOD(x,y), d|z$
+Пусть $d: d|\Nod(x,y), d|z$
 
-Надо доказать $d|\NOD(y,z)$, $d|x$
+Надо доказать $d|\Nod(y,z)$, $d|x$
 
-$$d|\NOD(x,y)\Rightarrow d|x$$
-$$d|\NOD(x,y)\Rightarrow d|y$$
-$$d|x,d|y\Rightarrow d|\NOD(y,z)$$
+$$d|\Nod(x,y)\Rightarrow d|x$$
+$$d|\Nod(x,y)\Rightarrow d|y$$
+$$d|x,d|y\Rightarrow d|\Nod(y,z)$$
 \item $\Leftarrow$ также
 \end{enumerate}
 \end{proof}
