@@ -42,7 +42,7 @@ $$(+^{(2)},0^{(0)},{{}^{-}}^{(1)},\cdot^{(2)})$$
 \item $(-a)b=a(-b)=-(ab)$
 \end{enumerate}
 \begin{proof}
-
+а
 \end{proof}
 \end{thm}
 
@@ -73,4 +73,24 @@ $$(+^{(2)},0^{(0)},{{}^{-}}^{(1)},\cdot^{(2)})$$
 \begin{dfn}[Тело кватернионов]
 
 \end{dfn}
+\begin{dfn}[Подкольцо]
+
+\end{dfn}
+\begin{thm}\label{subring-test}
+Пусть $S$ - подмножество кольца $(R,+,\circ)$, тогда $(S,+,\circ)$ - подкольцо $(R,+,\circ)$ тогда и только тогда когда
+\begin{enumerate}
+\item $S\neq \emptyset$
+\item $\forall x,y\in S:x+(-y)\in S$
+\item $\forall x,y\in S:x\circ y\in S$
+\end{enumerate}
+\begin{proof}
+Необходимое условие выполняется по определению кольца.
+
+Достаточное условие:
+
+По \ref{one-step-subgroup-test} и условиям 1 и 2 $(S,+)$ является группой, то есть замкнута по сложению, ассоциативна, имеет нейтральный по сложению и обратный по сложению. По условию 3 $(S,\circ)$ замкнута. Так как $S\subset R$, то на $S$ выполняются дистрибутивность и коммутативность.
+
+Следовательно $(S,+,\circ)$ - кольцо.
+\end{proof}
+\end{thm}
 \end{document}

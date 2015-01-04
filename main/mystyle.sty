@@ -31,7 +31,7 @@
 
 \usepackage{braids}
 \usepackage{euscript}
-\setlength{\emergencystretch}{2em}
+\setlength{\emergencystretch}{1em}
 
 \newtheoremstyle{mystyle}{}{}{\slshape}{}{\bfseries }{.}{ }{}
 \theoremstyle{mystyle}
@@ -40,16 +40,19 @@
 \theoremstyle{mystyle}
 \newtheorem{thm}{Теорема}[section]
 \theoremstyle{definition}
-\newtheorem{dfn}{Определение}[section]
+\newtheorem{dfn}[thm]{Определение}
 \theoremstyle{plain}
-\newtheorem{exm}{Пример}[section]
+\newtheorem{exm}[thm]{Пример}
 \theoremstyle{mystyle}
-\newtheorem{lemma}{Лемма}[section]
-
-\renewenvironment{proof}{$ $\newline{\scshape Доказательство.\,}\normalfont}{\qed\newline}
-
+\newtheorem{lemma}[thm]{Лемма}
 \theoremstyle{mystyle}
-\newtheorem{cnsq}{Следствие}[section]
+\newtheorem{cnsq}[thm]{Следствие}
+
+\renewenvironment{proof}{\par\pushQED{\qed}{\scshape Доказательство.\,}\normalfont}{\popQED}
+
+\renewenvironment{proof}[1][\proofname] {\par\pushQED{\qed}\normalfont\topsep6\p@\@plus6\p@\relax\trivlist\item[\hskip\labelsep\scshape#1\@addpunct{.}]\ignorespaces}{\popQED\endtrivlist\@endpefalse}
+
+
 
 %%table of contents
 	\usepackage{tocloft}
@@ -65,6 +68,7 @@
 
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
+\newcommand{\eqtext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
 \def\dotminus{\mathbin{\ooalign{\hss\raise1ex\hbox{.}\hss\cr
   \mathsurround=0pt$-$}}}
 \DeclareMathOperator{\ind}{ind}

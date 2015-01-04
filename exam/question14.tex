@@ -1,23 +1,51 @@
 \documentclass[../main/document.tex]{subfiles}
 
 \begin{document}
-\section{Гомоморфизмы колец, идеалы, фактор-кольца}
+\section{Гомоморфизмы колец, идеалы,\\ фактор-кольца}
 \begin{dfn}[Гомоморфизм колец]
 $h:R\to S$ - гомоморфизм, определённый так: $a\equiv b\Leftrightarrow h(a)=h(b)$
 \end{dfn}
-\begin{dfn}[Ядро кольца]
+\begin{dfn}[Ядро кольца]\label{kernel}
 $h:R\to S$ - гомоморфизм, тогда ядро кольца $\Ker h=\{a\in R:h(a)=0\}$ 
 \end{dfn}
-\begin{thm}
+\begin{thm}\label{kernel-subring}
 Ядро кольца - подкольцо
+\begin{proof}
+Пусть $\Ker h$ - ядро кольца $R$ по гомоморфизму $R\to S$, тогда
+\begin{enumerate}
+\item $\Ker h\neq \emptyset$
+\item $\forall x,y\in \Ker h:h(x+(-y))=h(x)+h(-y)\eqtext{\ref{group-homomorphism-properties}}
+h(x)-h(y)\eqtext{\ref{kernel}}0\Rightarrow x+(-y)\in \Ker h$
+\item $\forall x,y\in \Ker h:h(x\circ y)=h(x)\circ h(y)=0\circ 0=0\Rightarrow  x\circ y\in \Ker h$
+\end{enumerate}
+По \ref{subring-test} ядро $\Ker h$ является группой
+\end{proof}
 \end{thm}
-\begin{dfn}[Идеал]
+
+\begin{dfn}[Идеал]\label{ideal}
 $R$ - кольцо, $\mathcal{I}\subseteq R$ - идеал (левый, правый, двусторонний), если
 \begin{enumerate}
 \item $\mathcal{I}$ - подкольцо
 \item для любого $x\in R$ $x\mathcal{I}\subseteq\mathcal{I}$ (левый идеал), $\mathcal{I} x\subseteq\mathcal{I}$ (правый идеал)
 \end{enumerate}
 \end{dfn}
+
+\begin{thm}
+Ядро кольца - идеал
+\begin{proof}
+Пусть $\Ker h$ - ядро кольца $R$ по гомоморфизму $R\to S$, тогда
+\begin{enumerate}
+\item по теореме \ref{kernel-subring}
+\item
+\begin{enumerate}
+\item $\forall x\in R, y\in \Ker h: h(xy)=h(x)h(y)=h(x)*0=0\Rightarrow xy\in \Ker h\Rightarrow x\Ker h\subseteq \Ker h$
+\item $\forall x\in R, y\in \Ker h: h(yx)=h(y)h(x)=0*h(x)=0\Rightarrow yx\in \Ker h\Rightarrow \Ker h*x\subseteq \Ker h$
+\end{enumerate}
+
+\end{enumerate}
+По определению идеала ядро $\Ker h$ является идеалом
+\end{proof}
+\end{thm}
 \begin{exm}[Пример идеалов]
 
 \end{exm}

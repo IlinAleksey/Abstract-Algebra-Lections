@@ -54,8 +54,15 @@ $$
 \end{proof}
 \end{thm}
 
-\begin{thm}
+\begin{dfn}[Гомоморфизм групп]
 Если $G$ и $H$ - группа, $h:G\rightarrow H$ и $h(a*b)=h(a)*h(b)$, то $h$ - гомоморфизм
+\end{dfn}
+\begin{cnsq}\label{group-homomorphism-properties}
+Гомоморфизм групп обладает следующими свойствами:
+\begin{enumerate}
+\item $h(e)=e$
+\item $h(a^{-1})={h(a)}^{-1}$
+\end{enumerate}
 \begin{proof}
 $h(e)=h(e*e)=h(e)*h(e)$
 
@@ -65,7 +72,7 @@ h(a^{-1})=h(a^{-1})*e=h(a^{-1})*h(a)*(h(a))^{-1}=\\
 h(a^{-1}*a)*(h(a))^{-1}=h(e)*(h(a))^{-1}=e*(h(a))^{-1}=(h(a))^{-1}
 \end{multline*}
 \end{proof}
-\end{thm}
+\end{cnsq}
 
 \begin{dfn}[Порождённая конгруэнтность]
 Конгруэнтность порождённая $h$ - если $a\equiv b \Leftrightarrow h(a)=h(b)$ - конгруэнтность, то $h[A]= \bigslant{A}{\equiv}$ 

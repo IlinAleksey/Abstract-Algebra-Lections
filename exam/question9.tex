@@ -181,8 +181,10 @@ $s_j$ & $s_{(j-i)\mathrm{mod}n}$ & $r_{(i-j)\mathrm{mod}n}$ \\
 \end{dfn}
 \begin{thm}
 Рекурсивные перестановки с операцией композиции образуют группу
+
 \begin{proof}
-Надо доказать ассоциативность $\circ$, существование нейтрального и обратных
+Надо доказать ассоциативность $\circ$, существование\\ нейтрального и обратных
+
 \begin{enumerate}
 \item $a\in \omega$, $a=g(b)$, $b=f(c)$, $a=g(f(c))=(f\circ g)(c)$, $\circ$ ассоциативна
 \item $e=\mathrm{Id}^1_1$, $(f\circ e)(a)=e(f(a))=f(a)$
@@ -233,6 +235,7 @@ a^{j+(x+y-i)}&,\mbox{если } x+y\geq n\end{cases}$$
 
 \begin{thm}
 Любая чётная перестановка является произведением циклов длины 3
+
 \begin{proof}
 Любую чётную перестановку  можно разложить в произведение циклов длины 2. Таких циклов будет чётное число, соответственно будет $n$ произведений циклов вида $(ab)(cd)$
 \begin{enumerate}
@@ -242,7 +245,7 @@ a^{j+(x+y-i)}&,\mbox{если } x+y\geq n\end{cases}$$
 \end{proof}
 \end{thm}
 
-\begin{thm}
+\begin{thm}\label{one-step-subgroup-test}
 Если $\mathcal{G}$ - группа, $\mathcal{H}\subseteq \mathcal{G}$, $\mathcal{H}\neq \emptyset$, $a,b\in \mathcal{H}\rightarrow ab^{-1}\in \mathcal{H}$, тогда $\mathcal{H}$ является подгруппой
 \begin{proof}
 Пусть $a,b\in H$
