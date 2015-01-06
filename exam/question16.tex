@@ -7,14 +7,52 @@
 $$a_0+a_1x+a_2x^2+...+a_nx^n$$
 где $a_i\in P$ 
 \end{dfn}
-\begin{thm}
+\begin{thm}\label{polynomia-euclidean}
 Множество многочелнов над полем $P$ $P[x]$ - евклидово кольцо, где норма $\norm{p},p\in P[x]$ - степень многочлена
+\begin{proof}
+Чтобы $P[x]$ было евклидовым по определению \ref{euclidean-ring} оно должно быть ассоциативным, коммутативным кольцом с единицей, что доказывается тривиально. К тому же оно является целостным.
+
+Теперь нужно доказать что степень многочлена является нормой, воспользуемся определением евклидово нормы \ref{euclidean-norm}:
+\begin{enumerate}
+\item Степень многочлена - натуральные числа, поэтому $\norm{p}=\deg p\in \omega$
+\item Пусть $p(x),q(x)\in P[x]$, где $p(x),q(x)\neq 0$ и $\deg p=n,\deg q=m$. Тогда $\deg pq=n+m$, то есть $\norm{pq}\geq \max(\norm{p},\norm{q})$
+\item если $p(x)\neq 0$, то для любого $q(x)$ существуют $d(x)$ и $r(x)$ такие что $p(x)=d(x)q(x)+r(x)$ и $\norm{r}<\norm{q}$ или $r(x)=0$. Доказательство индукцией по степени $p(x)$:
+
+Базис: $\deg p<\deg q$. $p(x)=0\cdot q(x)+p(x)$
+
+Индукционный шаг: для всех $\deg p:m=\deg q<\deg p<n$ верно. Показать что верно для $\deg p=n$. Пусть
+$$p(x)=a_0+a_1+...a_nx^n$$
+$$q(x)=b_0+b_1+...b_mx^m$$
+Мы можем отнять от $p(x)$ подходящий многочлен, после которого не останется слагаемого степени $n$
+\begin{align*}
+p(x)-q(x)\cdot\frac{a_n}{b_m}x^{n-m}&=a_nx^n+p'(x)-(a_nx^n+\frac{a_n}{b_m}x^{n-m}q'(x))\\
+&=p'(x)-\frac{a_n}{b_m}x^{n-m}q'(x)
+\end{align*}
+Где $p'(x)$ и $q'(x)$ - не производные, это просто обозначение. По индукционному предположению
+$$\underbrace{\underbrace{p'(x)}_{<n}-\underbrace{\frac{a_n}{b_m}x^{n-m}\underbrace{q'(x)}_{<m}}_{<n}}_{<n}=d'(x)\cdot q(x)+r(x)\quad \norm{r}<\norm{q}$$
+Так как
+$$p(x)-q(x)\cdot\frac{a_n}{b_m}x^{n-m}=d'(x)\cdot q(x)+r(x)$$
+то
+$$p(x)=q(x)\left(d'(x)+\frac{a_n}{b_m}x^{n-m}\right)+r(x)=q(x)\cdot d(x)+r(x)\quad \norm{r}<\norm{q}$$
+\end{enumerate}
+\end{proof}
 \end{thm}
 \begin{dfn}[Корень многочлена]
-
+Корень многочлена $p(x)$ над полем $P$ это такой Элемент поля $a\in P$ что $p(a)=0$
 \end{dfn}
 \begin{thm}[Теорема Безу]
 Если $a$ - корень многочлена $p$, то $(x-a)|p(x)$
+\begin{proof}
+Предположим обратное, тогда деление $p(x)$ на $(x-a)$ будет давать остаток
+$$p(x)=d(x)(x-a)+r(x)$$
+По теореме \ref{polynomia-euclidean} $\norm{r}<\norm{(x-a)}$, и так как $\norm{(x-a)}=1$, то $\norm{r}=0$, то есть $r$ - константа, следовательно
+\begin{align*}
+p(x)&=d(x)(x-a)+C\\
+p(a)&=d(a)(a-a)+C\\
+0&=0+C
+\end{align*}
+Следовательно $C=0,\,p(x)=d(x)(x-a)$, а это и значит что $(x-a)|p(x)$
+\end{proof}
 \end{thm}
 \begin{dfn}[Корень кратности]
 $a$ - корень кратности $k$ многочлена $p(x)$, если $(x-a)^k|p(x)$
@@ -23,4 +61,47 @@ $a$ - корень кратности $k$ многочлена $p(x)$, если 
 Пусть $p(x)$ - многочлен и $p(x)=\sum_{i=0}^na_ix^i$ тогда его производная равна
 $$p'(x)=\sum_{i=0}^na_i\underbrace{1+1+...+1}_ix^{i-1}$$
 \end{dfn}
+\begin{thm}[Свойства производных]
+Пусть $p(x),q(x)\in P[x]$, тогда
+\begin{enumerate}
+\item $(p+q)'=p'+q'$
+\item $(pq)'=p'q+pq'$
+\end{enumerate}
+\end{thm}
+\begin{thm}
+Пусть $p(x)\in P[x],\,p(a)=0,\,k-1\neq 0$, тогда $a$ является корнем кратности степени $k$ тогда и только тогда, когда является корнем кратности степени $k-1$  производной этого многочлена.
+\begin{proof}
+\begin{enumerate}
+\item Необходимость. Пусть $a$ является корнем кратности степени $k$, тогда
+$$p(x)=(x-a)^{k}q(x)\quad q(a)\neq 0$$
+Найдём производную
+\begin{align*}
+p'(x)&=k(x-a)^{k-1}q(x)+(x-a)^kq'(x)\\
+&=(x-a)^{k-1}(kq(x)+(x-a)q'(x))\\
+&=(x-a)^{k-1}S(x)
+\end{align*}
+подставляя в $S(x)$ вместо $x$ $a$ получаем
+\begin{align*}
+S(a)&=kq(a)+(a-a)q'(a)\\
+&=kq(a)\\
+&=\underbrace{q(a)+...q(a)}_k\\
+&=\underbrace{(1+...+1)}_kq(a)\\
+\end{align*}
+Если $k\cdot 1\neq 0$, то $k\cdot q(a)\neq 0$, следовательно $a$ является корнем произаодной многочлена
+$$p'(x)=(x-a)^{k-1}S(x)$$
+\item Достаточность. Пусть $p(x)\in P[x]$ и $a$ - корень кратности $k-1$ производной многочлена $p(x)$:
+$$p'(x)=(x-a)^{k-1}s(x)$$
+тогда
+$$p(x)=(x-a)^mq(x)\quad q(a)\neq 0,\,m\geq 1$$
+очевидно $a$ является корнем кратности $m$. Найдём производную
+\begin{align*}
+p'(x)&=m(x-a)^{m-1}+(x-a)^mq'(x)=(x-a)^{k-1}s(x)\\
+&=(x-a)^{m-1}(m\cdot q(x)+(x-a)q'(x))\\
+&= (x-a)^{k-1}s(x)
+\end{align*}
+Из этого следует что $m=k$, то есть $a$ является корнем кратности $k$ 
+\end{enumerate}
+
+\end{proof}
+\end{thm}
 \end{document}
