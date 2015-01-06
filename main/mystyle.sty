@@ -1,8 +1,10 @@
+
 \usepackage{cmap}
+
 
 \usepackage{subfiles}
 \usepackage{mathtext}
-\usepackage[T1,T2A]{fontenc}
+\usepackage[T1,T2A,T2B,T2C]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english, russian]{babel}
 \usepackage[left=15mm, top=20mm, right=15mm, bottom=20mm]{geometry}
@@ -15,7 +17,6 @@
     urlcolor=cyan,
     pdftitle={Sharelatex Example},
     bookmarks=true,
-    pdfpagemode=FullScreen,
 }
 \usepackage{bookmark}
 
@@ -69,6 +70,7 @@
 
 \newcommand{\bigslant}[2]{{\raisebox{.2em}{$#1$}\left/\raisebox{-.2em}{$#2$}\right.}}
 \newcommand{\eqtext}[1]{\ensuremath{\stackrel{\text{#1}}{=}}}
+\newcommand{\rightarrowtext}[1]{\ensuremath{\stackrel{\text{#1}}{\rightarrow}}}
 \def\dotminus{\mathbin{\ooalign{\hss\raise1ex\hbox{.}\hss\cr
   \mathsurround=0pt$-$}}}
 \DeclareMathOperator{\ind}{ind}
