@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
-    <document bookmark3="0" file="C:\Users\Triangle\Documents\GitHub\LaTeX-Lections\main\document.tex" hasfocus="false" line="23" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question5.tex" hasfocus="false" line="108" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:\Users\Triangle\Documents\GitHub\LaTeX-Lections\exam\question1.tex" hasfocus="false" line="91" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question7.tex" hasfocus="false" line="12" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/main/mystyle.sty" hasfocus="false" line="18" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question9.tex" hasfocus="false" line="71" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question2.tex" hasfocus="false" line="26" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question11.tex" hasfocus="false" line="19" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question8.tex" hasfocus="false" line="3" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question3.tex" hasfocus="false" line="28" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question14.tex" hasfocus="false" line="26" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question6.tex" hasfocus="false" line="42" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question10.tex" hasfocus="false" line="20" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question15.tex" hasfocus="false" line="7" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question16.tex" hasfocus="false" line="83" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question17.tex" hasfocus="false" line="67" master="false" bookmark1="0" bookmark2="0"/>
-    <document bookmark3="0" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question12.tex" hasfocus="true" line="0" master="false" bookmark1="0" bookmark2="0"/>
+    <document line="8" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:\Users\Triangle\Documents\GitHub\LaTeX-Lections\main\document.tex"/>
+    <document line="102" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:\Users\Triangle\Documents\GitHub\LaTeX-Lections\exam\question1.tex"/>
+    <document line="108" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question5.tex"/>
+    <document line="12" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question7.tex"/>
+    <document line="30" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/main/mystyle.sty"/>
+    <document line="483" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question9.tex"/>
+    <document line="26" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question2.tex"/>
+    <document line="19" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question11.tex"/>
+    <document line="50" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question3.tex"/>
+    <document line="3" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question8.tex"/>
+    <document line="8" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question14.tex"/>
+    <document line="80" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question10.tex"/>
+    <document line="111" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question15.tex"/>
+    <document line="42" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question6.tex"/>
+    <document line="83" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question16.tex"/>
+    <document line="91" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question12.tex"/>
+    <document line="114" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question17.tex"/>
+    <document line="102" hasfocus="false" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question18.tex"/>
+    <document line="0" hasfocus="true" bookmark1="0" bookmark2="0" bookmark3="0" master="false" file="C:/Users/Triangle/Documents/GitHub/LaTeX-Lections/exam/question4.tex"/>
 </TexmakerSession>

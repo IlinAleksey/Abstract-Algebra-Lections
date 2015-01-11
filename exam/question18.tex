@@ -7,40 +7,98 @@
 
 \end{dfn}
 
+\textcolor{red}{
 \begin{cnsq}
 Конечные поля имеют конечную характеристику
-\end{cnsq}
+\begin{proof}
+\begin{align*}
+\underbrace{1+...+1}_n&=\underbrace{1+...+1}_m&  n&=m\\
+\underbrace{1+...+1}_n&=0& & &
+\end{align*}
+Что это вообще такое
+\end{proof}
+\end{cnsq}}
 
 \begin{thm}
 Если $F$ - конечное поле характеристики $p$, то $\abs{F}=p^k$
 \begin{proof}
-
+Так как $F$ - конечное поле $\mathbb{Z}_p\subseteq F$, тогда $F$ - линейное пространство (\textcolor{red}{почему это линейное пространство}) над $\mathbb{Z}_p$, в таком случае имеется базис $e_1,...,e_k$. Пусть $a\in F$б тогда
+$$a=a_1e_1+...+a_ke_k\quad a_1,...,a_k\in\mathbb{Z}_p$$
+И так как $\abs{\mathbb{Z}_p}=p$, то $\abs{F}=p^k$ - количество комбинаций $a_1,...,a_k$
 \end{proof}
 \end{thm}
+
+\textcolor{red}{
 \begin{cnsq}
-Если $m\neq p$, ТО поля из $m$ элементов не существует
-\end{cnsq}
-\begin{thm}
+Если $m\neq p$, то поля из $m$ элементов не существует
+\begin{proof}
+???
+\end{proof}
+\end{cnsq}}
+
+\begin{thm}[Мечта школьника]
 Если $F$ - поле характеристики $p$, то
 $$(x+y)^p=x^p+y^p$$
 \begin{proof}
+Пусть $x,y\in F$, тогда по формуле бинома ньютона
+$$(x+y)^p=\sum\limits_{i=0}^pC^i_px^iy^{p-i}$$
+Рассмотрим первый и последний элемент этой суммы. По формуле сочетания
+$$C^0_p=\frac{p!}{0!(p-0)!}=1$$
 
+$$C^p_p=\frac{p!}{p!(p-p)!}=1$$
+поэтому 
+\begin{align*}
+(x+y)^p&=\sum\limits_{i=0}^pC^i_px^iy^{p-i}\\
+&=C^0_px^0y^{p}+\sum\limits_{i=1}^{p-1}C^i_px^iy^{p-i}+C^p_px^py^{0}\\
+&=y^p+\sum\limits_{i=1}^{p-1}C^i_px^iy^{p-i}+x^p
+\end{align*}
+Рассмотрим оставшуюся часть суммы, то есть для $i\neq 0\neq p$. По формуле сочетания
+$$C^i_p=\frac{p!}{i!(p-i)!}=p\cdot c_i\quad i\neq 0\neq p$$
+где $c_i$ - некоторое число, зависимое от $i$.
+Подставляя $C^i_p$ получаем
+$$
+\sum\limits_{i=1}^{p-1}C^i_px^iy^{p-i}=
+\sum\limits_{i=1}^{p-1}pc_ix^iy^{p-i}=
+\sum\limits_{i=1}^{p-1}\underbrace{(1+...+1)}_p c_ix^iy^{p-i}=0
+$$
+так как элемент $p\in F$ равен нулю.
+Таким образом
+$$(x+y)^p=y^p+\sum\limits_{i=1}^{p-1}C^i_px^iy^{p-i}+x^p=x^p+y^p$$
 \end{proof}
 \end{thm}
 \begin{thm}
 Если $F$ - поле характеристики $p$, то
 $$({(x+y)^p})^k=({x^p})^k+({y^p})^k$$
 \begin{proof}
-
+\begin{align*}
+(x+y)^{p^k}&=((x+y)^p)^{p^{k-1}}\\
+&=(x^p+y^p)^{p^{k-1}}\\
+&=((x^p+y^p)^p)^{p^{k-2}}\\
+&=...\\
+&=(x^{p^{k-1}}+y^{p^{k-1}})^{p^1}\\
+&=x^{p^k}+y^{p^k}
+\end{align*}
 \end{proof}
 \end{thm}
 \begin{thm}
-Если $F$ - конечное поле и $\abs{F}=m$, тогда существует корень уравнения типа $x^m-1$
+Если $F$ - конечное поле и $\abs{F}=m$, тогда существует корень уравнения типа $x^{m-1}-x$
 \begin{proof}
-Если в один миг
-Яблочный спас
-Узнаем всё что есть
-Засияет тьма
+Пусть $F'=\{F\setminus \{0\},\cdot,1,-1\}$, $F'$ является группой и $\abs{F'}=m-1$. Пусть $a\in F'$, тогда по \ref{power-order-of-group} 
+$$a^{m-1}=1$$
+То есть все ненулевые элементы группы удовлетворяют $x^{m-1}=0$.
+
+Так как $x^m-x=x(x^{m-1}-1)$, то и нулевой элемент и ненулевые элементы являются корнями этого уравнения.
 \end{proof}
 \end{thm}
+\begin{thm}
+Если существует поле $F$, такое что $\abs{F}=p^k$, то существует поле $F'$, такое что $\abs{F'}=p^{k'}$, при любом $k'\leq k$
+\begin{proof}
+Если $a|b$, то $(x^a-1)|(x^b-1)$ (\textcolor{red}{как так}). Предположим $b=ac$, то есть
+$$x^b=(x^a)^c-1=(x^a-1)((x^a)^{c-1}+(x^a)^{c-2}+...+x^a+1)$$
+$F$ - корни многочлена $x^{p^k}-x=x(x^{p^{k-1}}-1)$ 
+
+\textcolor{red}{Что дальше в этой теореме?}
+\end{proof}
+\end{thm}
+\textcolor{red}{Что дальше в этой главе?}
 \end{document}
