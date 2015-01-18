@@ -5,24 +5,54 @@
 \begin{dfn}[Гомоморфизм]\label{homomorphism}
 Отображение $f \colon G_1 \to G_2$ называется гомоморфизмом групп $(G_1,*), ~(G_2,\times)$, если оно одну групповую операцию переводит в другую: $f(a*b)=f(a)\times f(b),\, a,b\in G_1$.
 \end{dfn}
-\begin{dfn}[Мономорфизм]
-Инъективный (разнозначный) гомоморфизм
+\begin{cnsq}
+Изоморфизм и вложение - частный случай изоморфизма
+\end{cnsq}
+\begin{dfn}[Единичаня алгебра]
+Единичная алгебра - алгебра, содержащая всего один элемент. $\Sigma$ - сигнатура, $e$ - единственный элемент, $f^{(n)}(e,...,e)=e$
 \end{dfn}
-\begin{exm}[Пример на мономорфизм]
-
+\begin{exm}[Пример единичной алгебры]
+$(\{0\};+,\cdot)$, $(\{1\};\cdot)$
 \end{exm}
+\begin{cnsq}
+Все единичные алгебры одной сигнатуры изоморфны между собой
+\begin{proof}
+Пусть $\varepsilon_1=(\{e_1\};I)$, $\varepsilon_2=(\{e_2\};J)$, тогда
+$$h(f^{\varepsilon_1}(e_1,...,e_1))=h(e_1)=e_2$$
+$$f^{\varepsilon_2}(h(e_1),...,h(e_1))=f^{\varepsilon_2}(e_2,...,e_2)=e_2$$
+следовательно
+$$h(f^{\varepsilon_1}(e_1,...,e_1))=f^{\varepsilon_2}(h(e_1),...,h(e_1))$$
+\end{proof}
+\end{cnsq}
+\begin{thm}
+Из любой алгебры существует изоморфизм в единичную алгебру и только один
+\begin{proof}
+Пусть $\mathcal{A}=(A,I),\, \varepsilon=(\{e\},J)$ и $h:\mathcal{A}\to\varepsilon$ определено так: $h(a)=e$, для всех $a\in A$. Тогда
+$$h(f^{\mathcal{A}}(a_1,...,a_n))=e$$
+$$f^{\varepsilon}(h(a_1),...,h(a_n))=f^{\varepsilon}(e,...,e)=e$$
+следовательно
+$$h(f^{\mathcal{A}}(a_1,...,a_n))=f^{\varepsilon}(h(a_1),...,h(a_n))$$
+\end{proof}
+\end{thm}
+\begin{thm}
+Пусть $h:\mathcal{A}\to \mathcal{B}$ - гомоморфизм, $t(x_1,...,x_n)$ - терм, $a_1,...,a_n\in\mathcal{A} $, тогда $h(t^{\mathcal{A}}(a_1,...,a_n))=t^{\mathcal{B}}(h(a_1),...,h(a_n))$
+\begin{proof}
+Так же как для изоморфизма
+\end{proof}
+\end{thm}
+\begin{thm}
+Пусть $h:\mathcal{A}\to \mathcal{B}$ - гомоморфизм, тогда образ множества $A$ при отображении $h$ образует подалгебру в $\mathcal{B}$
+\begin{proof}
+Так же как для вложения
+\end{proof}
+\end{thm}
 \begin{dfn}[Эпиморфизм]
 сюръективный гомоморфизм
 \end{dfn}
 \begin{exm}[Пример на Эпиморфизм]
 
 \end{exm}
-\begin{dfn}[Изоморфизм]
-взаимно однозначный (биективный) гомоморфизм
-\end{dfn}
-\begin{exm}[Пример на Изоморфизм]
 
-\end{exm}
 \begin{dfn}[Эндоморфизм]
 гомоморфизм в само множество
 \end{dfn}
@@ -35,19 +65,75 @@
 \begin{exm}[Пример на Автоморфизм]
 
 \end{exm}
-\begin{dfn}[Гомоморфный образ]
-Образ гомоморфизма
+\begin{dfn}[Отношение эквивалентности]
+\textcolor{red}{пока нет}
 \end{dfn}
-\begin{exm}[Пример на гомоморфный образ]
-
-\end{exm}
+\begin{dfn}[Класс эквивалентности]
+\textcolor{red}{пока нет}
+\end{dfn}
+\begin{thm}
+Любое отношение эквивалентности получается из функции
+\begin{proof}
+Пусть $\equiv$ - отношение эквивалентности на $A\neq\emptyset$. $B=A|\equiv$ - множество классов эквивалентности. Для $a\in A,\,h(a)=\{b\in A:a\equiv b\}$. Пусть $R(a,b)\Leftrightarrow h(a)=h(b)$, тогда
+$$R(a,b)\Leftrightarrow h(a)=h(b)\Leftrightarrow \{c\in A:a\equiv c\}=\{c\in A:b\equiv c\}$$
+Из этого следует
+$$b\in\{c\in A:a\equiv c\}\Rightarrow b\equiv a $$
+Следовательно
+$$a\equiv b\Rightarrow h(a)=h(b)\Rightarrow R(a,b)$$
+Любое отношение эквивалентности можно получить таким образом
+\end{proof}
+\end{thm}
+\begin{thm}
+$h:A\to B$ - гомоморфизм, тогда $x\equiv y\Leftrightarrow h(x)=h(y)$ - отношение эквивалентности.
+\begin{proof}
+Пусть $f^{(n)}$ - сигнаутрная операция, $x_1,...,x_n,y_1,...,y_n\in A$ и $x_1\equiv y_1,...,x_n\equiv y_n$, тогда
+$$h(f^{A}(x_1,...,x_n))=f^{B}(h(x_1),...,h(x_n))$$
+$$h(f^{A}(y_1,...,y_n))=f^{B}(h(y_1),...,h(y_n))$$
+Так как $x_i\equiv y_i\Leftrightarrow h(x_i)=h(y_i)$, то
+$$h(f^{A}(x_1,...,x_n))=h(f^{A}(y_1,...,y_n))\Leftrightarrow f^{A}(x_1,...,x_n)\equiv f^{A}(y_1,...,y_n)$$
+\end{proof}
+\end{thm}
 \begin{dfn}[Конгруэнтность]
-Отношение эквивалентности (рефликсивность, симметричность, транзитивность), сохраняющееся при основных операциях, то есть 
-$$a_1\equiv a_2,\, b_1\equiv b_2\Rightarrow a_1\cdot b_1\equiv a_2\cdot b_2$$
+$\mathcal{A}$ - алгебра с сигнатурой $\Sigma$, Отношение $\equiv$ - конгруэнтность в $\mathcal{A}$, если
+\begin{enumerate}
+\item $\equiv$ - эквивалентность
+\item если $x_1,...,x_n,y_1,...,y_n\in \mathcal{A}$, $f^{(n)}\in \Sigma$, $x_1\equiv y_1,...,x_n\equiv y_n$, то
+$$f^{A}(x_1,...,x_n)\equiv f^{A}(y_1,...,y_n)$$
+\end{enumerate}
 \end{dfn}
+\begin{cnsq}
+Пусть $h:A\to B$ - гомоморфизм, то $x\equiv y\Leftrightarrow h(a)=h(b)$ - отношение конгруэнтности на $A$
+\end{cnsq}
 \begin{dfn}[Фактор-алгебра]
-Множество классов эквивалентности по отношению к конгруэнтности
+Пусть $\mathcal{A}$ - алгебра с сигнатурой $\Sigma$, Отношение $\equiv$ - конгруэнтность в $\mathcal{A}$, тогда фактор-алгебра - $B=\bigslant{\mathcal{A}}{\equiv}$ - множество классов эквивалентности по отношению к конгруэнтности
 \end{dfn}
-\textcolor{red}{Тут должно быть больше теорем}
+\begin{thm}
+Для каждого отношения конгруэнтности существует порождающий его гомоморфизм
+\begin{proof}
+Пусть $\mathcal{A}$ - алгебра с сигнатурой $\Sigma$, Отношение $\equiv$ - конгруэнтность в $\mathcal{A}$, $\mathcal{B}=\bigslant{\mathcal{A}}{\equiv}$ - множество классов эквивалентности.
+
+$f^{\mathcal{B}}(b_1,...,b_n)=b\Leftrightarrow f^{\mathcal{A}}(a_1,...,a_n)=a$ для некоторых $a_1\in b_1,...,a_n\in b_n,a\in b$. Докажем что от выбора $a_1,...,a_n$ значение $f^{\mathcal{B}}(b_1,...,b_n)$ не зависит.
+
+Предположим что зависит, выберем значения $a'_1,...,a'_n$, такие что $a'_1\in b_1,...,a'_n\in b_n$, тогда $f^{\mathcal{A}}(a'_1,...,a'_n)=a'\not\in b$, но так как $a_1\equiv a'_1,...,a_n\equiv a'_n$ и $\equiv$ - конгруэнтность, то $a\equiv a'$, но при этом $a'\not\in b$. Противоречие.
+
+Возьмём $h:\mathcal{A}\to \mathcal{B}$, $h(a)=$класс эквивалентности $a$
+\textcolor{red}{$$h(a)=h(f^{\mathcal{A}}(a_1,...,a_n))=f^{\mathcal{B}}(h(a_1),...,h(a_n))=h(a)$$
+$f^{\mathcal{A}}(a_1,...,a_n)=a$
+, $h(a)=b$, к чему всё это}
+\end{proof}
+\end{thm}
+
+\begin{thm}
+Пусть $h:\mathcal{A}\to \mathcal{B}$ - эпиморфизм, $\equiv$ - отношение конгруэнтности для $h$, тогда $\bigslant{\mathcal{A}}{\equiv}\simeq \mathcal{B}$
+\begin{proof}
+\textcolor{red}{не уверен что вообще нужно}
+\end{proof}
+\end{thm}
+\begin{cnsq}
+$h:\mathcal{A}\to \mathcal{B}_1$ и $h:\mathcal{A}\to \mathcal{B}_2$ - эпиморфзмы, если $\equiv_1$ и $\equiv_2$ совпадают, то $\mathcal{B}_1\simeq \mathcal{B}_2$
+\begin{proof}
+\textcolor{red}{не уверен что вообще нужно}
+\end{proof}
+\end{cnsq}
 
 \end{document}

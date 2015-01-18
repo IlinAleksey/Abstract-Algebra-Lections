@@ -30,7 +30,62 @@ $G$ - группа. Теорема доказана.
 Абелева группа - группа, в которой $xy=yx$
 \end{dfn}
 \begin{dfn}[Циклическая группа]
+Циклическая группа - группа, порождённая одним элементом. $<a>$ - циклическая группа порождённая $a$.
+
+$(\omega,+,0)$ изоморфно бесконечной циклической группе
+
+моноид типа $(i,j)$ изоморфен конечной циклической группе
 \end{dfn}
+
+\begin{thm}
+$\mathcal{G}=\langle a\rangle$, тогда $\mathcal{G}\cong (\mathbb{Z},+)$ или  $\mathcal{G}\cong (\mathbb{Z}_n,+)$ для некоторого $n$
+\begin{proof}
+Пусть $\mathcal{M}$ - подмоноид, порождённый $a$. $\mathcal{M}$ - циклический
+\begin{enumerate}
+\item $\mathcal{M} \morphtext{h} (\omega,+,0)$
+
+$x\in \mathcal{M}$ $x^{-1}$ $xx^{-1}=e$
+
+$x\in \mathcal{M}$ $x\neq e$ $x^{-1}\neq \mathcal{M}$
+
+$$h(x)+h(x^{-1})=h(xx^{-1})=h(e)=0$$
+
+$h(x)=h(x^{-1})=0$
+
+$h(x)=h(x^{-1})=e$
+
+$x\in \mathcal{M}$
+
+$h(x^{-1})=-h(x)$
+
+\item $\mathcal{M}$ - конечный $(i,j)$ моноид, если $i>0$, то в $\mathcal{M}$ есть нееденичный идемпотент, следовательно он необратимый, следовательно в группе должно быть $i=0$
+$$a^xa^y=\begin{cases} a^{x+y} &,\mbox{если } x+y<j\\
+a^{(x+y)\pmod j}&,\mbox{если } x+y\geq j\end{cases}$$
+$\mathcal{M}$ - группа
+$$a^x=a^{j-x}=a^{j\pmod j}=e$$
+$\mathcal{M}$ - группа порождённая $a$, $\mathcal{M}=\mathcal{G}$
+
+$h:a^x\rightarrow x$
+\end{enumerate}
+\end{proof}
+\end{thm}
+\begin{thm}
+В циклической группе существуют нетривиальные группы тогда и только тогда когда она бесконечна или $n$ в $(\mathbb{Z}_n,+)$ составное 
+\begin{proof}
+\begin{enumerate}
+\item $\Rightarrow$ пусть имеется $(\mathbb{Z}_n,+)$, $n$ - простое, $a\neq 0$, $a<n$, $a$ и $n$ взаимно простые, следовательно $xa+yn=1$. пусть $b\in \mathbb{Z}$, тогда 
+$$b=b\cdot 1=b(ax+yn)=(bx)a+(by)n$$
+$$(\underbrace{a+a+...+a}_{bx})\mod n=(b-(by)n)\mod n=b\mod n=b$$
+
+Таким образом любые подгруппы, содержащие не только $0$ содержат $\mathbb{Z}_n$
+\item $\Leftarrow$ 
+\begin{enumerate}
+    \item бесконечная циклическая группа имеет нетривиальную подгруппу
+    \item пусть $n=xy$, тогда $(\mathbb{Z}_{xy},+)\supseteq \{0,x,2x,...,(y-1)x\}$
+  \end{enumerate}
+\end{enumerate}
+\end{proof}
+\end{thm}
 \begin{thm}[Теорема Гротендика]
 Каждый коммутативный моноид, в котором все элементы сократимы можно вложить в группу
 \begin{proof}

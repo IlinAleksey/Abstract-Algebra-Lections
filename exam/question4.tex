@@ -2,5 +2,91 @@
 
 \begin{document}
 \section{Декартовы произведения, тождества, многообразия}
-\textcolor{red}{Что в этой главе}
+\begin{dfn}[Декартово произведение]
+Пусть $\mathcal{A}=(A,I)$, $\mathcal{B}=(B,J)$ - алгебры одной сигнатуры $\Sigma$, декартово произведение $\mathcal{C}=\mathcal{A}\times \mathcal{B}$ - это
+$$\mathcal{C}=(C,K),\, C=A\times B=\{(a,b):a\in A,b\in B\}$$
+где определены операции $f^{(n)}\in \Sigma$
+$$f^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))=(f^{\mathcal{A}}(a_1,...,a_n),f^{\mathcal{B}}(b_1,...,b_n))$$
+\end{dfn}
+\begin{exm}[Пример декартова произведения]
+
+\end{exm}
+\begin{thm}
+Пусть $\mathcal{C}=\mathcal{A}\times \mathcal{B}$, $h_1(a,b)=a,\,h_2(a,b)=b$, тогда $h_1:C\to A$ и $h_2:C\to B$ - гомоморфизмы.
+\begin{proof}
+\begin{align*}
+h_1(f^{\varepsilon}((a_1,b_1),...,(a_n,b_n)))&=h_1(f^{\mathcal{A}}(a_1,...,a_n),f^{\mathcal{B}}(b_1,...,b_n))\\
+&=f^{\mathcal{A}}(a_1,...,a_n)\\
+&=f^{\mathcal{A}}(h_1(a_1,b_1),...,h_1(a_n,b_n))
+\end{align*}
+\end{proof}
+\end{thm}
+\begin{dfn}[Тождество]
+Пусть $\Sigma$ - сигнатура, $t_1,t_2$ - термы в $\Sigma$, тогда тождество - формула вида $t_1=t_2$.
+
+В $\mathcal{A}$ выполнено $t_1=t_2$, если оно выполнено для любых значений переменных.
+\end{dfn}
+\begin{dfn}[Многообразие]
+Пусть $T$ - множество тождеств, многообразие задаваемое(определяемое) $T$ - это класс всех алгебр, в котором выполнены все тождества из $T$.
+
+$\mathcal{A}\in M\Leftrightarrow$ в $\mathcal{A}$ выполнены $t_1=t_2\in T$
+\end{dfn}
+\begin{exm}[Пример многообразия]
+
+\end{exm}
+\begin{lemma}
+Пусть $\mathcal{C}= \mathcal{A}\times\mathcal{B}$. Тогда для любого терма $t(x_1,...,x_n)$:
+$$t^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))=(t^{\mathcal{A}}(a_1,...,a_n),t^{\mathcal{B}}(b_1,...,b_n))$$
+\begin{proof}
+Индукция по построению $t$
+\begin{enumerate}
+\item $t=x$, $t^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))=(a_i,b_i)$, $(a_i,b_i)=(t^{\mathcal{A}}(a_1,...,a_n)$, $t^{\mathcal{B}}(b_1,...,b_n))$
+\item $t=d$ - константа, $t^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))=(d^{\mathcal{A}},d^{\mathcal{B}})$, $(t^{\mathcal{A}}(a_1,...,a_n)$, $t^{\mathcal{B}}(b_1,...,b_n))=(d^{\mathcal{A}},d^{\mathcal{B}})$
+\item пусть $s_1,...,s_k$ - термы, $t=f(s_1,...,s_k)=(s_i^{\mathcal{A}}(a_1,...,a_n),s_i^{\mathcal{B}}(b_1,...,b_n))$, тогда
+\begin{multline*}
+t^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))=\\
+f^{\mathcal{C}}(s_1^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n)),...,s_n^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n)))=\\
+f^{\mathcal{C}}((s_i^{\mathcal{A}}(a_1,...,a_n),s_i^{\mathcal{B}}(b_1,...,b_n)),...,(s_k^{\mathcal{A}}(a_1,...,a_n),s_k^{\mathcal{B}}(b_1,...,b_n)))=\\
+(f^{\mathcal{A}}(s_i^{\mathcal{A}}(a_1,...,a_n),...,s_k^{\mathcal{A}}(a_1,...,a_n)),f^{\mathcal{B}}(s_i^{\mathcal{B}}(b_1,...,b_n),...,s_k^{\mathcal{B}}(b_1,...,b_n)))=\\
+(t^{\mathcal{A}}(a_1,...,a_n),t^{\mathcal{B}}(b_1,...,b_n))
+\end{multline*}
+
+\end{enumerate}
+\end{proof}
+\end{lemma}
+\begin{thm}[Теорема Бишопа]
+Пусть $M$ - многообразие, $\mathcal{A},\mathcal{B}\in M$, тогда
+\begin{enumerate}
+\item $\mathcal{C}\subseteq \mathcal{A}\Rightarrow \mathcal{C}\in M$ (замкнутость относительно подалгебры)
+\item $\mathcal{C}$ - гомоморфный образ $\mathcal{A}\Rightarrow \mathcal{C}\in M$ (замкнутость относительно гомоморфизма)
+\item $\mathcal{C}= \mathcal{A}\times\mathcal{B} \Rightarrow \mathcal{C}\in M$ (замкнутость относительно декартовых произвелений)
+\end{enumerate}
+\begin{proof}
+Пусть $T=\{t_1(x_1,...,x_n)=t_2(x_1,...,x_n)\}$ - множество тождеств
+\begin{enumerate}
+
+\item пусть $c_1,...,c_n\in\mathcal{C}$ и $\mathcal{C}\subseteq \mathcal{A}$, тогда $c_1,...,c_n\in\mathcal{A}$ и
+\begin{align*}
+t^{\mathcal{C}}_1(c_1,...,c_n)&=t^{\mathcal{A}}_1(c_1,...,c_n)\\
+&=t^{\mathcal{A}}_2(c_1,...,c_n)\\
+&=t^{\mathcal{C}}_2(c_1,...,c_n)
+\end{align*}
+это и значит что $\mathcal{C}\in M$
+\item пусть $c_1,...,c_n\in\mathcal{C}$ и $h:\mathcal{A}\to\mathcal{C}$, тогда $c_1=h(a_1),...,c_n=h(a_n),\,\\a_1,...,a_n\in\mathcal{A} $ и
+\begin{align*}
+t_1^{\mathcal{C}}(c_1,...,c_n)&=t_1^{\mathcal{C}}(h(a_1),...,h(a_n))\\
+&=h(t_1^{\mathcal{A}}(a_1,...,a_n))\\
+&=h(t_2^{\mathcal{A}}(a_1,...,a_n))\\
+&=t_2^{\mathcal{C}}(h(a_1),...,h(a_n))\\
+&=t_2^{\mathcal{C}}(c_1,...,c_n)
+\end{align*}
+\item пусть $c_1,...,c_n\in\mathcal{C}$ и $\mathcal{C}= \mathcal{A}\times\mathcal{B}$, тогда $(a_1,b_1),...,(a_n,b_n)\in \mathcal{C}$ и
+\begin{align*}
+t_1^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))&=(t_1^{\mathcal{A}}(a_1,...,a_n),t_1^{\mathcal{B}}(b_1,...,b_n))\\
+&=(t_2^{\mathcal{A}}(a_1,...,a_n),t_2^{\mathcal{B}}(b_1,...,b_n))\\
+&=t_2^{\mathcal{C}}((a_1,b_1),...,(a_n,b_n))
+\end{align*}
+\end{enumerate}
+\end{proof}
+\end{thm}
 \end{document}

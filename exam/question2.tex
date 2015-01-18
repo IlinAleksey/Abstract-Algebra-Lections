@@ -5,7 +5,7 @@
 \section{Подалгебры, порождающие элементы,\\ вложения}
 
 \begin{dfn}[Подалгебра]
-Подалгебра - алгебра $\mathcal{B}=(B,J)$ является подалдгеброй $\mathcal{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение на $B$ для всякого $f$
+Подалгебра - алгебра $\mathcal{B}=(B,J)$ является подалдгеброй $\mathcal{A}=(A,I)$, если $B\subseteq A$ и $J(f)$ - ограничение $I(f)$ на $B$ для всякого $f$
 \end{dfn}
 \begin{dfn}[Ограничение операции]
 Ограничение операции - $n$-местная операция $g$ на $B$ является ограничением операции $f$ множеством $B$ если 
@@ -35,7 +35,7 @@ $$A\subseteq B, B\subseteq C \Rightarrow A\subseteq C$$
 \begin{enumerate}
 \item $\Rightarrow$
 
-$B$ - носитель подалгебры $\mathcal{B}=(B,J)$ и $B\subseteq A$, тогда
+$B$ - носитель некоторой подалгебры $\mathcal{B}=(B,J)$ и $B\subseteq A$, тогда
 $$f^{\mathcal{A}}(b_1,...,b_n)=f^{\mathcal{B}}(b_1,...,b_n)\in B$$
 $B$ замкнута относительно сигнатурной операции в алгебре $\mathcal{A}$
 \item $\Leftarrow$
@@ -54,5 +54,70 @@ $J(f)$ - ограниение $f^{\mathcal{A}}$  на $B$
 \begin{exm}[Пример на \ref{carrier-theorem}]
 
 \end{exm}
+\begin{thm}
+Пусть $\mathcal{A}=(A,I)$ - алгебра, $\mathcal{B}_k$ - подалгебры, такие что $\bigcap\limits_k \mathcal{B}_k\neq \emptyset$, тогда $\bigcap\limits_k \mathcal{B}_k$ - носитель подалгебры
+\begin{proof}
+Пусть $f^{(n)}\in\Sigma$, $b_1,...,b_n\in \bigcap\limits_k \mathcal{B}_k$, тогда
+\begin{align*}
+\Rightarrow&\text{ по определению пересечения}&b_1,...,b_n&\in\mathcal{B}& \text{для всех }k\\
+\Rightarrow&\text{ по }\ref{carrier-theorem}&f^{\mathcal{A}}(b_1,...,b_n)&\in\mathcal{B}& \text{для всех }k\\
+\Rightarrow&\text{ по определению пересечения}&f^{\mathcal{A}}(b_1,...,b_n)&\in\bigcap\limits_k \mathcal{B}_k& 
+\end{align*}
+\end{proof}
+\end{thm}
+\begin{dfn}[Порождённая подалгебра]
+Пусть $\mathcal{A}=(A,I),\,x\subseteq A,\,X\neq\emptyset,\,\mathcal{B}_k$ - всевозможные подалгебры, включающие $X$, тогда $\bigcap \mathcal{B}_k$ - подалгебра, порождённвя $X$.
+\end{dfn}
+\begin{thm}
+$\mathcal{A}$ - алгебра, $X\subseteq A,\,X\neq\emptyset,\,\mathcal{B}$ - подалгебра, порождённвя $X$ тогда и только тогда, когда $\mathcal{B}$ состоит из всевозможных $t^{\mathcal{A}}(x_1,...,x_n)$ для $x_1,...,x_n\in X$
+\begin{proof}
+Достаточность($\Leftarrow$). Пусть $\mathcal{B}$ состоит из всевозможных $t^{\mathcal{A}}(x_1,...,x_n)$ для $x_1,...,x_n\in X$. Пусть $B_k\in \mathcal{A}$ - подалгебры такие что $X\subseteq B_k$, тогда
+\begin{align*}
+x_1,...,x_n&\in B_k\\
+t^{\mathcal{A}}(x_1,...,x_n)&\in B_k\\
+t^{\mathcal{A}}(x_1,...,x_n)&\in \bigcap\limits_X B_k\\
+t^{\mathcal{A}}(x_1,...,x_n)&\in \mathcal{B}
+\end{align*}
 
+Необходимость($\Rightarrow$). Предположим, что найдётся $b\in \mathcal{B}$, что $b\neq t^{\mathcal{A}}(x_1,...,x_n)$ для любых $t$ и $x_1,...,x_n\in X$, 
+Пусть $C=\{t^{\mathcal{A}}(x_1,...,x_n): t - \text{терм, }x_1,...,x_n\in X\}$, следовательно $b\not\in C$, $x_i\in C$ и $X\subseteq C$. 
+
+$C$ является подалгеброй: пусть $c_1,...,c_m\in C$ и
+\begin{align*}
+c_1&=t_1^{\mathcal{A}}(x_1,...,x_n)
+&\vdots
+c_m&=t_m^{\mathcal{A}}(x_1,...,x_n)
+\end{align*}
+$$f^{\mathcal{A}}(c_1,...,c_m)=f^{\mathcal{A}}(t_1^{\mathcal{A}}(x_1,...,x_n),...,t_m^{\mathcal{A}}(x_1,...,x_n))$$
+По определению терма $f^{\mathcal{A}}(t_1^{\mathcal{A}}(x_1,...,x_n),...,t_m^{\mathcal{A}}(x_1,...,x_n))$ тоже является термом, содержащий переменные $x_1,...,x_n$, следовательно $C$ замкнуто по сигнатурной операции $A$ и по \ref{carrier-theorem} является подалгеброй.
+
+$C=\mathcal{B}_k$ ждя некоторого $k$, $\mathcal{B}=\bigcap\limits_k \mathcal{B}_k$. Так как $b\not\in C$, то $b\not\in \mathcal{B}$, что является противоречием.
+\end{proof}
+\end{thm}
+\begin{dfn}[Разнозначное отображение]
+$f$ - разнозначное, если $f(x)\neq f(y)$ при $x\neq y$
+\end{dfn}
+\begin{dfn}[Вложение]
+$h:\mathcal{A}\rightarrow \mathcal{B}$ - вложение $\mathcal{A}$ в $\mathcal{B}$, если $h$ - разнозначное отображение и
+$$h(f^{\mathcal{A}}(a_1,...,a_n))=f^{\mathcal{B}}(h(a_1),...,h(a_n))$$
+говорят "$\mathcal{A}$ вкладывается в $\mathcal{B}$"
+\end{dfn}
+\begin{thm}
+$h:\mathcal{A}\rightarrow \mathcal{B}$ - вложение $\mathcal{A}$ в $\mathcal{B}$, тогда
+\begin{enumerate}
+\item образ $h$ - $\mathcal{C}$, подалгебра в $\mathcal{B}$
+\item $h:\mathcal{A}\simeq\mathcal{C}$
+\end{enumerate}
+\begin{proof}
+\begin{enumerate}
+\item Пусть $c_1,...,c_n\in \rng h$, тогда $c_1=h(a_1),...,c_n=h(a_n)$ и
+$$h(f^{\mathcal{A}}(a_1,...,a_n))=f^{\mathcal{B}}(h(a_1),...,h(a_n))=f^{\mathcal{B}}(c_1,...,c_n)\in \rng h$$
+Элементы образа $h$ замкнуты относительно сигнатурных операций $\mathcal{B}$
+\textcolor{red}{\item $\mathcal{C}=\rng h$,
+$h:A\leftrightarrow C$,
+$\Rightarrow h$ - изоморфизм}
+\end{enumerate}
+
+\end{proof}
+\end{thm}
 \end{document}

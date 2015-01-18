@@ -26,7 +26,7 @@ h(u)*h(v)=h(a_1...a_n)*h({a'}_1...{a'}_n)=\\
 
 Пусть дан алфавит $A=\{1\}$, который образует множество слов $A^*=\{\varepsilon,1,11,...\}$ и моноид $\mathcal{A}=(A^*;\&,\varepsilon)$, тогда
 \begin{enumerate}
-\item $\mathcal{B}=({1};\cdot,1)$, порождённый элементами $A$ является гомоморфным образом $\mathcal{A}$, $h:A\rightarrow B$, $h(1...1)=1$
+\item $\mathcal{B}=(\{1\};\cdot,1)$, порождённый элементами $A$ является гомоморфным образом $\mathcal{A}$, $h:A\rightarrow B$, $h(1...1)=1$
 \item $\mathcal{C}=(\omega;+,0)$, порождённый элементами $A$(натуральные числа можно получить сложением единицы) является гомоморфным образом $\mathcal{A}$, $h:A\rightarrow B$, $h(\underbrace{1...1}_n)=n$
 \end{enumerate}
 \end{exm}
@@ -91,16 +91,23 @@ $$a^{x+y}=a^k=a^{i+(x+y-i)mod(j-i)}$$
 
 \end{proof}
 \end{thm}
-\textcolor{red}{
-\begin{dfn}[Моноид типа $(i,j-i)$]
-Моноид типа $(i,j-i)$ - моноид с элементами $$???$$
-\end{dfn}}
 
-\textcolor{red}{
+\begin{dfn}[Моноид типа $(i,j-i)$]
+Вначале идут $i$ элементов без повтора, потом идёт цикл $j-i$
+\end{dfn}
+
+
 \begin{thm}
 В моноиде типа $(i,j-i)$, где $i>0$ существует идемпотент $b\neq e$
 \begin{proof}
-???
+Пусть $j-i=m$, проверим элемент $a^{i+(m-i)\Mod m}$
+$$(a^{i+(m-i)\Mod m})^2=a^{2i+2(m-i)\Mod m}=a^{i+(2i+2(m-i))\Mod m-i)\Mod m}$$
+\begin{align*}
+i+(2i+2(m-i)-i)\Mod m-i)\Mod m&=i+(2i+2m-2i-i)\Mod m\\
+&=i+(2m-i)\Mod m\\
+&=i+(m-i)\Mod m
+\end{align*}
+Следовательно $a^{i+(m-i)\Mod m}$ - идемпотент
 \end{proof}
-\end{thm}}
+\end{thm}
 \end{document}
